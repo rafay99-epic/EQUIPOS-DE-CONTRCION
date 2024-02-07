@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:quotaserver/frontend/screens/LoginScreen.dart';
 
@@ -48,7 +49,7 @@ class _splashState extends State<splash> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "E.D.C",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: screenWidth * 0.2, // 20% of screen width
                     fontWeight: FontWeight.bold,
@@ -59,7 +60,7 @@ class _splashState extends State<splash> {
               FittedBox(
                 child: Text(
                   "EQUIPOSE DE CONTRACION",
-                  style: TextStyle(
+                  style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: screenWidth * 0.1, // 10% of screen width
                     fontWeight: FontWeight.bold,
@@ -75,14 +76,14 @@ class _splashState extends State<splash> {
               const Spacer(),
               Text(
                 "Brought to you by Quotaserv",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.035, // 3.5% of screen width
                 ),
               ),
               Text(
                 "https://www.quotaserv.com/",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.03, // 3% of screen width
                 ),
