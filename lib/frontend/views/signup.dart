@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quotaserver/frontend/screens/SignUpScreen.dart';
+import 'package:quotaserver/frontend/screens/LoginScreen.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 
-class Login extends StatefulWidget {
-  Login({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
-  final TextEditingController _usernameController = TextEditingController();
-
+class _SignUpState extends State<SignUp> {
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
-  bool _isRememberMe = false;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +39,7 @@ class _LoginState extends State<Login> {
             ),
             Center(
               child: Text(
-                "Login",
+                "Sign Up",
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -54,7 +52,7 @@ class _LoginState extends State<Login> {
             ),
             Center(
               child: Text(
-                "Welcome to CarStore",
+                "Find your dream car!",
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.primary,
@@ -65,64 +63,43 @@ class _LoginState extends State<Login> {
               height: 20,
             ),
             MyTextFeild(
-              hintText: 'Username',
+              hintText: 'Full name',
               obsuretext: false,
-              controller: _usernameController,
+              controller: _nameController,
               icons: Icons.account_circle,
             ),
             const SizedBox(
               height: 20,
             ),
             MyTextFeild(
+              hintText: 'Email',
+              obsuretext: false,
+              controller: _emailController,
+              icons: Icons.email_rounded,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            MyTextFeild(
+              hintText: 'Phone Number',
+              obsuretext: false,
+              controller: _phoneNumberController,
+              icons: Icons.phone,
+              onlyNumber: true,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            MyTextFeild(
               hintText: 'Password',
               obsuretext: true,
               controller: _passwordController,
-              icons: Icons.lock,
+              icons: Icons.password_rounded,
             ),
             const SizedBox(
               height: 10,
             ),
             // Forget Password
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: screenSize.width * 0.05,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      "Forget Password?",
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //Remember Me Checkbox
-            CheckboxListTile(
-              title: Text(
-                "Remember Me",
-                style: GoogleFonts.poppins(
-                    fontSize: 14,
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold),
-              ),
-              value: _isRememberMe,
-              onChanged: (bool? value) {
-                setState(() {
-                  _isRememberMe = value!;
-                });
-              },
-              controlAffinity: ListTileControlAffinity.leading,
-              activeColor: Theme.of(context)
-                  .colorScheme
-                  .secondary, //  <-- leading Checkbox
-            ),
 
             // Sign In Button
             SizedBox(
@@ -132,7 +109,7 @@ class _LoginState extends State<Login> {
                   screenSize.width * 0.05,
                 ), // Adjust the padding as needed
                 child: MyButton(
-                  text: "Login",
+                  text: "Sign Up",
                   textColor: Theme.of(context).colorScheme.tertiary,
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   onTap: () => {},
@@ -141,43 +118,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             //  or Section
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 5.0,
-                left: 20,
-                right: 20,
-              ), // Adjust the padding as needed
-              // ignore: sized_box_for_whitespace
-              child: Container(
-                width: double.infinity,
-                child: const Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Divider(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        "OR",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+
             //Google Sign In Button
             const SizedBox(
               height: 20,
@@ -197,26 +138,6 @@ class _LoginState extends State<Login> {
               height: 10,
             ),
 
-            InkWell(
-              onTap: () {
-                // Handle sign up with Google
-              },
-              child: Container(
-                width: 60, // Adjust the size as needed
-                height: 60, // Adjust the size as needed
-                decoration: const BoxDecoration(
-                  // color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.all(8.0), // Adjust the padding as needed
-                  child: SvgPicture.asset(
-                    'assets/svg/google.svg',
-                  ),
-                ),
-              ),
-            ),
             // Sign Up Button
             Padding(
               padding: const EdgeInsets.only(top: 10.0),
@@ -224,7 +145,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Don't have an account? ",
+                    "Already have an account? ",
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.primary,
@@ -239,7 +160,7 @@ class _LoginState extends State<Login> {
                         PageRouteBuilder(
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                                  const SignUpPage(),
+                                  const LoginScreen(),
                           transitionDuration: const Duration(
                             milliseconds: 500,
                           ), // Adjust the duration as needed
@@ -264,7 +185,7 @@ class _LoginState extends State<Login> {
                       );
                     },
                     child: Text(
-                      "Sign Up",
+                      "Sign In",
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         color: Theme.of(context).colorScheme.secondary,

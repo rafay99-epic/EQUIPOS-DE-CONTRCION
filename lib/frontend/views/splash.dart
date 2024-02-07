@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:quotaserver/frontend/screens/LoginScreen.dart';
@@ -13,18 +14,71 @@ class splash extends StatefulWidget {
 
 // ignore: camel_case_types
 class _splashState extends State<splash> {
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Navigator.of(context).pushReplacement(
+  //     PageRouteBuilder(
+  //       pageBuilder: (context, animation, secondaryAnimation) =>
+  //           const LoginScreen(),
+  //       transitionDuration:
+  //           const Duration(seconds: 2), // Adjust the duration as needed
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         return FadeTransition(
+  //           opacity: animation,
+  //           child: child,
+  //         );
+  //       },
+  //     ),
+  //   );
+
+  //   // Timer(
+  //   //   const Duration(seconds: 3),
+  //   //   () {
+  //   //     Navigator.push(
+  //   //       context,
+  //   //       PageTransition(
+  //   //         child: const LoginScreen(),
+  //   //         type: PageTransitionType.rightToLeftWithFade,
+  //   //       ),
+  //   //     );
+  //   //   },
+  //   // );
+  // }
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 4), () {
-      Navigator.push(
-        context,
-        PageTransition(
-          child: const LoginScreen(),
-          type: PageTransitionType.fade,
-        ),
-      );
-    });
+    WidgetsBinding.instance!.addPostFrameCallback(
+      (_) {
+        Timer(
+          const Duration(seconds: 3),
+          () {
+            Navigator.push(
+              context,
+              PageTransition(
+                child: const LoginScreen(),
+                type: PageTransitionType.rightToLeftWithFade,
+              ),
+            );
+          },
+        );
+        // Navigator.of(context).pushReplacement(
+        //   PageRouteBuilder(
+        //     pageBuilder: (context, animation, secondaryAnimation) =>
+        //         const LoginScreen(),
+        //     transitionDuration: const Duration(
+        //       seconds: 6,
+        //     ), // Adjust the duration as needed
+        //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        //       return FadeTransition(
+        //         opacity: animation,
+        //         child: child,
+        //       );
+        //     },
+        //   ),
+        // );
+      },
+    );
   }
 
   @override
@@ -67,12 +121,17 @@ class _splashState extends State<splash> {
                   ),
                 ),
               ),
-              Image.asset(
-                'assets/images/logo_1.png',
+              SizedBox(
+                height: screenHeight * 0.10,
+              ), // 7% of screen height
+              SvgPicture.asset(
+                'assets/svg/splash.svg',
+                // ignore: deprecated_member_use
                 color: Colors.white,
-                width: screenWidth * 0.6, // 60% of screen width
-                height: screenHeight * 0.3, // 30% of screen height
+                width: screenWidth * 0.4, // 60% of screen width
+                height: screenHeight * 0.2, // 30% of screen height
               ),
+
               const Spacer(),
               Text(
                 "Brought to you by Quotaserv",

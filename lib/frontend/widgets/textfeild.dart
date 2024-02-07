@@ -6,6 +6,7 @@ class MyTextFeild extends StatelessWidget {
   final TextEditingController controller;
   final IconData icons;
   final FocusNode? focusNode;
+  final bool onlyNumber;
 
   const MyTextFeild({
     Key? key,
@@ -14,6 +15,7 @@ class MyTextFeild extends StatelessWidget {
     required this.controller,
     required this.icons,
     this.focusNode,
+    this.onlyNumber = false,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,7 @@ class MyTextFeild extends StatelessWidget {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
@@ -38,6 +40,9 @@ class MyTextFeild extends StatelessWidget {
           obscureText: obsuretext,
           controller: controller,
           focusNode: focusNode,
+          keyboardType: onlyNumber
+              ? TextInputType.number
+              : TextInputType.text, // Add this line
           style:
               TextStyle(fontSize: screenHeight * 0.02), // 2% of screen height
           decoration: InputDecoration(
