@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/constant/theme/colors.dart';
-import 'package:quotaserver/frontend/screens/ItemNotFoundScreen.dart';
+import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
 import 'package:quotaserver/frontend/screens/SplashScreen.dart';
 
 void main() {
@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: lightmode,
       debugShowCheckedModeBanner: false,
-      // home: const SplashScreen(),
-      home: const ItemNotFoundScreen(),
+      home: const SplashScreen(),
+      // home: const SellRegistrationScreen(),
     );
   }
 }

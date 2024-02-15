@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotaserver/frontend/views/articleregister.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 
 class ArticleRegisterSceen extends StatelessWidget {
@@ -6,8 +7,10 @@ class ArticleRegisterSceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: MyAppBar(),
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: const MyAppBar(),
+      body: const ArticleRegister(),
     );
   }
 }
