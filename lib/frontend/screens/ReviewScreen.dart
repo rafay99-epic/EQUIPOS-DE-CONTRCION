@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:quotaserver/frontend/views/home.dart';
+import 'package:quotaserver/frontend/views/review.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ReviewScreen extends StatelessWidget {
+  const ReviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     ));
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Home(),
+      body: const review(),
     );
   }
 }

@@ -15,6 +15,7 @@ class MyButton extends StatelessWidget {
     required this.backgroundColor,
     required this.onTap,
     required this.fontSize,
+    required double width,
   }) : super(key: key);
 
   @override
@@ -22,7 +23,7 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(5.0),

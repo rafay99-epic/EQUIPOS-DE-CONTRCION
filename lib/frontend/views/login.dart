@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quotaserver/frontend/screens/HomeScreen.dart';
 import 'package:quotaserver/frontend/screens/SignUpScreen.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
@@ -37,7 +38,7 @@ class _LoginState extends State<Login> {
                 // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
                 ),
             const SizedBox(
-              height: 25,
+              height: 200,
             ),
             Center(
               child: Text(
@@ -135,8 +136,36 @@ class _LoginState extends State<Login> {
                   text: "Login",
                   textColor: Theme.of(context).colorScheme.tertiary,
                   backgroundColor: Theme.of(context).colorScheme.secondary,
-                  onTap: () => {},
+                  onTap: () => {
+                    Navigator.of(context).push(
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            const HomePage(),
+                        transitionDuration: const Duration(
+                          milliseconds: 500,
+                        ), // Adjust the duration as needed
+                        transitionsBuilder:
+                            (context, animation, secondaryAnimation, child) {
+                          var begin = Offset(1.0, 0.0);
+                          var end = Offset.zero;
+                          var curve = Curves.ease;
+
+                          var tween = Tween(begin: begin, end: end)
+                              .chain(CurveTween(curve: curve));
+
+                          return FadeTransition(
+                            opacity: animation,
+                            child: SlideTransition(
+                              position: animation.drive(tween),
+                              child: child,
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  },
                   fontSize: 18.0,
+                  width: 0,
                 ),
               ),
             ),

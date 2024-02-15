@@ -35,7 +35,7 @@ class _SignUpState extends State<SignUp> {
                 // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
                 ),
             const SizedBox(
-              height: 25,
+              height: 200,
             ),
             Center(
               child: Text(
@@ -114,6 +114,7 @@ class _SignUpState extends State<SignUp> {
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   onTap: () => {},
                   fontSize: 18.0,
+                  width: 0,
                 ),
               ),
             ),
@@ -166,7 +167,7 @@ class _SignUpState extends State<SignUp> {
                           ), // Adjust the duration as needed
                           transitionsBuilder:
                               (context, animation, secondaryAnimation, child) {
-                            var begin = Offset(1.0, 0.0);
+                            var begin = const Offset(1.0, 0.0);
                             var end = Offset.zero;
                             var curve = Curves.ease;
 
