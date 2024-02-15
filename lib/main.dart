@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/constant/theme/colors.dart';
-import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
 import 'package:quotaserver/frontend/screens/SplashScreen.dart';
 
 void main() {
