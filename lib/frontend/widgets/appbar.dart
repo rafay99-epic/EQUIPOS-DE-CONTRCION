@@ -64,6 +64,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showActionIcon;
   final bool showTitle;
   final TextAlign textAlign;
+  final Color? titleColor;
 
   const MyAppBar({
     Key? key,
@@ -73,6 +74,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showActionIcon = false,
     this.showTitle = true,
     this.textAlign = TextAlign.center,
+    this.titleColor,
   }) : super(key: key);
 
   @override
@@ -86,7 +88,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 textAlign: textAlign,
                 style: GoogleFonts.poppins(
                   fontSize: 24,
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: titleColor,
                   fontWeight: FontWeight.w600,
                 ),
               )

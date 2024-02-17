@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.0.9
   font_awesome_flutter: ^10.7.0
   flutter_rating_bar: ^4.0.1
+  flutter_credit_card_new: ^0.0.4
 
 dev_dependencies:
   flutter_test:

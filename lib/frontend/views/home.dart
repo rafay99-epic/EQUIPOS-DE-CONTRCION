@@ -103,6 +103,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: MyAppBar(
         headTitle: 'QuotaServ',
+        titleColor: Theme.of(context).colorScheme.secondary,
         showActionIcon: true,
         showTitle: true,
         actionIcon: Icons.notifications,

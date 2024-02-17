@@ -86,6 +86,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_credit_card_new:
+    dependency: "direct main"
+    description:
+      name: flutter_credit_card_new
+      sha256: f3af0285ac77863edbbe495fd12bd3fd0282e85512a4b51e63b759e767491049
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   flutter_lints:
     dependency: "direct dev"
     description:

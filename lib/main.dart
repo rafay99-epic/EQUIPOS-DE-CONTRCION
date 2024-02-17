@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/constant/theme/colors.dart';
 import 'package:quotaserver/frontend/screens/EditProfileScreen.dart';
+import 'package:quotaserver/frontend/screens/PaymentScreen.dart';
 import 'package:quotaserver/frontend/screens/SplashScreen.dart';
 
 void main() {
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: lightmode,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
-      // home: const EditProfileScreen(),
+      // home: const SplashScreen(),
+      home: const PaymentScreen(),
     );
   }
 }
