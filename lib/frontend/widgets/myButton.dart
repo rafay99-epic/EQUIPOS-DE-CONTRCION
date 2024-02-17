@@ -7,6 +7,8 @@ class MyButton extends StatelessWidget {
   final Color backgroundColor;
   final VoidCallback onTap;
   final double fontSize;
+  final FontWeight fontWeight;
+  final bool isBold; // Add this line
 
   const MyButton({
     Key? key,
@@ -16,6 +18,8 @@ class MyButton extends StatelessWidget {
     required this.onTap,
     required this.fontSize,
     required double width,
+    this.fontWeight = FontWeight.w500,
+    this.isBold = false, // Add this line
   }) : super(key: key);
 
   @override
@@ -34,6 +38,7 @@ class MyButton extends StatelessWidget {
           style: GoogleFonts.poppins(
             color: textColor,
             fontSize: fontSize,
+            fontWeight: isBold ? FontWeight.bold : fontWeight,
           ),
         ),
       ),

@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
                 top: 5.0,
                 left: 20,
                 right: 20,
-              ), // Adjust the padding as needed
+              ),
               // ignore: sized_box_for_whitespace
               child: Container(
                 width: double.infinity,
