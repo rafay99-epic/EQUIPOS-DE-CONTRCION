@@ -36,12 +36,17 @@ class _ItemNotFoundState extends State<ItemNotFound> {
           padding: EdgeInsets.all(padding),
           child: Column(
             children: <Widget>[
-              const Center(
-                  // Logo will come
-                  // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
-                  ),
               const SizedBox(
-                height: 100,
+                height: 60,
+              ),
+              Center(
+                // Logo will come
+                child: Image.asset(
+                  'assets/images/logo.png',
+                ), // Replace with your logo path
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Center(
                 child: Text(
@@ -73,7 +78,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Category',
                 obsuretext: false,
                 controller: _categoryController,
-                icons: Icons.category,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -82,7 +88,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Brand',
                 obsuretext: false,
                 controller: _brandController,
-                icons: Icons.account_circle,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -91,7 +98,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Model',
                 obsuretext: false,
                 controller: _modelController,
-                icons: Icons.model_training_rounded,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -100,7 +108,9 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Budget US Dollar (USD)',
                 obsuretext: false,
                 controller: _budgetController,
+                showShadow: false,
                 icons: Icons.money,
+                showIcon: false,
               ),
               const SizedBox(
                 height: 20,
@@ -109,7 +119,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'When you need it',
                 obsuretext: false,
                 controller: _timeNeededController,
-                icons: Icons.time_to_leave,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -118,7 +129,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Name',
                 obsuretext: false,
                 controller: _nameController,
-                icons: Icons.account_circle,
+                showShadow: false,
+                showIcon: false,
               ),
               const SizedBox(
                 height: 20,
@@ -127,7 +139,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'City and Country',
                 obsuretext: false,
                 controller: _cityCountryController,
-                icons: Icons.location_city_outlined,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -136,7 +149,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Email',
                 obsuretext: false,
                 controller: _emailController,
-                icons: Icons.email_rounded,
+                showIcon: false,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 10,
@@ -145,7 +159,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 hintText: 'Phone Number',
                 obsuretext: false,
                 controller: _phoneNumberController,
-                icons: Icons.phone,
+                showShadow: false,
+                showIcon: false,
                 onlyNumber: true,
               ),
               const SizedBox(

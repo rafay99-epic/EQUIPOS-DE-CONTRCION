@@ -44,12 +44,17 @@ class _SellRegistrationState extends State<SellRegistration> {
           padding: EdgeInsets.all(padding),
           child: Column(
             children: <Widget>[
-              const Center(
-                  // Logo will come
-                  // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
-                  ),
               const SizedBox(
-                height: 100,
+                height: 5,
+              ),
+              Center(
+                // Logo will come
+                child: Image.asset(
+                  'assets/images/logo.png',
+                ), // Replace with your logo path
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Center(
                 child: Text(
@@ -69,6 +74,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: false,
                 controller: _nameController,
                 icons: Icons.account_circle,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 15,
@@ -78,6 +84,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: false,
                 controller: _parentController,
                 icons: Icons.account_circle,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 20,
@@ -87,6 +94,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: false,
                 controller: _emailController,
                 icons: Icons.email_rounded,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 20,
@@ -96,15 +104,17 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: false,
                 controller: _reEnterEmailCotroller,
                 icons: Icons.email_rounded,
+                showIcon: true,
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               MyTextFeild(
                 hintText: 'Phone Number',
                 obsuretext: false,
                 controller: _phoneNumberController,
                 icons: Icons.phone,
+                showIcon: true,
                 onlyNumber: true,
               ),
               const SizedBox(

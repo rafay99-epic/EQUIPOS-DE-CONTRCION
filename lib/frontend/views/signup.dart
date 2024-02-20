@@ -30,12 +30,17 @@ class _SignUpState extends State<SignUp> {
         // margin: EdgeInsets.all(margin),
         child: Column(
           children: <Widget>[
-            const Center(
-                // Logo will come
-                // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
-                ),
             const SizedBox(
-              height: 200,
+              height: 60,
+            ),
+            Center(
+              // Logo will come
+              child: Image.asset(
+                'assets/images/logo.png',
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Center(
               child: Text(

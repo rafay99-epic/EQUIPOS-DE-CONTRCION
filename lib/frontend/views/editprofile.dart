@@ -30,12 +30,17 @@ class _editProfileState extends State<editProfile> {
           padding: EdgeInsets.all(padding),
           child: Column(
             children: <Widget>[
-              const Center(
-                  // Logo will come
-                  // child: Image.asset('assets/images/logo.png'), // Replace with your logo path
-                  ),
               const SizedBox(
-                height: 100,
+                height: 20,
+              ),
+              Center(
+                // Logo will come
+                child: Image.asset(
+                  'assets/images/logo.png',
+                ), // Replace with your logo path
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Center(
                 child: Text(
@@ -48,13 +53,15 @@ class _editProfileState extends State<editProfile> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
               MyTextFeild(
                 hintText: 'Full Name',
                 obsuretext: false,
                 controller: _nameController,
                 icons: Icons.account_circle,
+                showShadow: false,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 20,
@@ -64,6 +71,8 @@ class _editProfileState extends State<editProfile> {
                 obsuretext: false,
                 controller: _emailController,
                 icons: Icons.model_training_rounded,
+                showIcon: true,
+                showShadow: false,
               ),
               const SizedBox(
                 height: 20,
@@ -74,6 +83,8 @@ class _editProfileState extends State<editProfile> {
                 controller: _phoneNumberController,
                 icons: Icons.phone,
                 onlyNumber: true,
+                showShadow: false,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 10,
@@ -84,6 +95,8 @@ class _editProfileState extends State<editProfile> {
                 controller: _passwordController,
                 icons: Icons.lock,
                 onlyNumber: false,
+                showShadow: false,
+                showIcon: true,
               ),
 
               // request Item Button In Button
