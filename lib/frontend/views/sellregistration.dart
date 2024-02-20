@@ -48,9 +48,10 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 5,
               ),
               Center(
-                // Logo will come
                 child: Image.asset(
-                  'assets/images/logo.png',
+                  'assets/images/logo_1.png',
+                  width: 150,
+                  height: 150,
                 ), // Replace with your logo path
               ),
               const SizedBox(

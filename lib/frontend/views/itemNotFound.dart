@@ -40,10 +40,11 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 60,
               ),
               Center(
-                // Logo will come
                 child: Image.asset(
-                  'assets/images/logo.png',
-                ), // Replace with your logo path
+                  'assets/images/logo_1.png',
+                  width: 150,
+                  height: 150,
+                ),
               ),
               const SizedBox(
                 height: 10,

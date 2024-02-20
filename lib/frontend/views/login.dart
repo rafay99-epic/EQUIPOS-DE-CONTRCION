@@ -31,16 +31,17 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(padding),
-          // margin: EdgeInsets.all(margin),
           child: Column(
             children: <Widget>[
               const SizedBox(
-                height: 60,
+                height: 50,
               ),
               Center(
                 // Logo will come
                 child: Image.asset(
-                  'assets/images/logo.png',
+                  'assets/images/logo_1.png',
+                  width: 150,
+                  height: 150,
                 ), // Replace with your logo path
               ),
               const SizedBox(
