@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
 import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
-import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/imagebox.dart';
 
 class favourite extends StatefulWidget {

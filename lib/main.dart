@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/constant/theme/colors.dart';
-import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
-
-import 'package:quotaserver/frontend/screens/ProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/SplashScreen.dart';
-import 'package:quotaserver/frontend/views/itemdetail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: lightmode,
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
-      // home: const ItemDetailScreen(),
     );
   }
 }
