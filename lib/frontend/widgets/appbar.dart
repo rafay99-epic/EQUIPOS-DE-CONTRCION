@@ -65,6 +65,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showTitle;
   final TextAlign textAlign;
   final Color? titleColor;
+  final Color? backgroundColor;
 
   const MyAppBar({
     Key? key,
@@ -75,6 +76,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showTitle = true,
     this.textAlign = TextAlign.center,
     this.titleColor,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -82,6 +84,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     try {
       return AppBar(
         centerTitle: true,
+        backgroundColor: backgroundColor,
         title: showTitle
             ? Text(
                 headTitle ?? '',

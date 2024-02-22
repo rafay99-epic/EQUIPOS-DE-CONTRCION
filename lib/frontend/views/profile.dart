@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
+import 'package:quotaserver/frontend/screens/ChatScreen.dart';
 import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
 import 'package:quotaserver/frontend/widgets/imagebox.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
@@ -244,7 +245,12 @@ class _ProfileState extends State<Profile> {
                         text: "Send Message",
                         textColor: Theme.of(context).colorScheme.secondary,
                         backgroundColor: Theme.of(context).colorScheme.primary,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(transitionToPage(
+                            ChatScreen(),
+                            durationMillis: 500,
+                          ));
+                        },
                         fontSize: 16,
                         width: double.infinity,
                         fontWeight: FontWeight.w600,
