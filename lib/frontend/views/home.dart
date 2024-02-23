@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
       ),
       ImageBox(
         imageUrl:
-            'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            "https://s3-alpha-sig.figma.com/img/a897/29c3/23f6ac4fd7ef0d40f34f8f8270bfa4f8?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=llV0JA2FRA~U-3SkJfjIE1ElJoN5C1MzTP8-4TzQHkbQb0nk8YJBbgV9Po5~YiynY~ul3VX2edZ8pHcwK5oLINUEJKnpAUTmnLWaiPowMIvTs9U1Uxwn4~aLP0CbgFdNr7Mxz72Z-lAfRFJ3MJU0po3DmvoJJCYOl9Jho~Dnt9uV3dMeXsjUdd0OHOe5egBIMMmHXdJlGtLoSfe0WBFVCByQ~0L1WUXxOFvfmFuJMcXsMO33FWEOBaFLScFSofxaOqKB0lIoVfmG7ZuEjIEDACEoqYl1E0hgX3WOI1M81V6Q3ESm-bZXFMiu7RhmyeKhXGgG5VTSf7ty7OVYgItu6g__",
         price: ' 5,85,000',
         title: "Lorem Ipsum",
         onTap: () {
