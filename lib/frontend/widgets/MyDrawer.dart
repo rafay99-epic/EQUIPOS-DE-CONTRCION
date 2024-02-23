@@ -28,13 +28,12 @@ class MyDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(15),
             child: ListTile(
               title: Text(
-                "H O M E",
+                "Home",
                 style: GoogleFonts.playfairDisplay(
                   color: Theme.of(context).colorScheme.primary,
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -59,7 +58,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -84,7 +82,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -109,7 +106,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -134,7 +130,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -159,7 +154,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -184,7 +178,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -209,7 +202,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -234,7 +226,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -259,7 +250,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -284,7 +274,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -309,7 +298,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -334,7 +322,6 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 //opening the Home Page by closing the drawer
                 Navigator.pop(context),
@@ -359,12 +346,11 @@ class MyDrawer extends StatelessWidget {
                   // fontWeight: FontWeight.bold,
                 ),
               ),
-              leading: const Icon(Icons.home_rounded),
               onTap: () => {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return ProductAlertDialog();
+                    return const ProductAlertDialog();
                   },
                 ),
               },
