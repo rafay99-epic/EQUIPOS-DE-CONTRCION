@@ -8,6 +8,7 @@ import 'package:quotaserver/frontend/screens/FavouriteScreen.dart';
 import 'package:quotaserver/frontend/screens/HomeScreen.dart';
 import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
 import 'package:quotaserver/frontend/screens/ItemNotFoundScreen.dart';
+import 'package:quotaserver/frontend/screens/MyAdScreen.dart';
 import 'package:quotaserver/frontend/screens/NotificationPage.dart';
 import 'package:quotaserver/frontend/screens/PaymentScreen.dart';
 import 'package:quotaserver/frontend/screens/ProductAlertScreen.dart';
@@ -398,6 +399,30 @@ class MyDrawer extends StatelessWidget {
                   builder: (BuildContext context) {
                     return const updateDialogbox();
                   },
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ListTile(
+              title: Text(
+                "My Ads",
+                style: GoogleFonts.playfairDisplay(
+                  color: Theme.of(context).colorScheme.primary,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () => {
+                //opening the Home Page by closing the drawer
+                Navigator.pop(context),
+                //Opening the Setting Page
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MyAdScreen(),
+                  ),
                 ),
               },
             ),
