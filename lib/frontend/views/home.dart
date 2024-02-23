@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
 import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
 import 'package:quotaserver/frontend/screens/NotificationPage.dart';
@@ -22,13 +20,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final TextEditingController _location = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    // Calculate padding and margin based on screen size
-    var padding = screenSize.width * 0.01; // 1% of screen width
     //icon box
     final List<IconBox> iconBoxes = <IconBox>[
       IconBox(

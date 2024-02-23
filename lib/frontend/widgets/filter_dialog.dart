@@ -17,8 +17,6 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
   Widget build(BuildContext context) {
     final TextEditingController _location = TextEditingController();
     var screenSize = MediaQuery.of(context).size;
-    // Calculate padding and margin based on screen size
-    var padding = screenSize.width * 0.01; // 1% of screen width
 
     return Dialog(
       backgroundColor: Colors.white,
