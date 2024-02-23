@@ -15,6 +15,7 @@ import 'package:quotaserver/frontend/screens/ProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
 import 'package:quotaserver/frontend/widgets/productalertdialog.dart';
+import 'package:quotaserver/frontend/widgets/updatedialog.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -377,6 +378,26 @@ class MyDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const AdReviewScreen(),
                   ),
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ListTile(
+              title: Text(
+                "Update Status",
+                style: GoogleFonts.playfairDisplay(
+                  color: Theme.of(context).colorScheme.primary,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () => {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const updateDialogbox();
+                  },
                 ),
               },
             ),
