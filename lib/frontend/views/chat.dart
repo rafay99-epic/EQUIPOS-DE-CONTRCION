@@ -135,53 +135,56 @@ class _ChatState extends State<Chat> {
                       const SizedBox(
                         width: 10,
                       ),
+                      //New Version
                       Flexible(
                         child: Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
-                          child: Container(
-                            margin: const EdgeInsets.only(top: 8),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 14,
-                              vertical: 10,
-                            ),
-                            decoration: BoxDecoration(
-                              color: isCurrentUser
-                                  ? Theme.of(context).colorScheme.secondary
-                                  : const Color.fromRGBO(33, 39, 39, 1),
-                              borderRadius: BorderRadius.only(
-                                topLeft: const Radius.circular(12),
-                                topRight: const Radius.circular(12),
-                                bottomLeft: isCurrentUser
-                                    ? const Radius.circular(0)
-                                    : const Radius.circular(12),
-                                bottomRight: isCurrentUser
-                                    ? const Radius.circular(12)
-                                    : const Radius.circular(0),
-                              ),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(top: 8),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 14,
+                                  vertical: 10,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isCurrentUser
+                                      ? Theme.of(context).colorScheme.secondary
+                                      : const Color.fromRGBO(33, 39, 39, 1),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: const Radius.circular(12),
+                                    topRight: const Radius.circular(12),
+                                    bottomLeft: isCurrentUser
+                                        ? const Radius.circular(0)
+                                        : const Radius.circular(12),
+                                    bottomRight: isCurrentUser
+                                        ? const Radius.circular(12)
+                                        : const Radius.circular(0),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
                                     messages[index].text,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 10),
-                                  Text(
-                                    DateFormat('hh:mm a')
-                                        .format(messages[index].timestamp),
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: Text(
+                                  DateFormat('hh:mm a')
+                                      .format(messages[index].timestamp),
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
