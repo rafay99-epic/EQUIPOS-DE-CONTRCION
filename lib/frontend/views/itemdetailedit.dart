@@ -1,43 +1,51 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
-import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:quotaserver/frontend/widgets/updatedialog.dart';
 
-class ItemDetail extends StatefulWidget {
-  const ItemDetail({super.key});
+class itemdetailedit extends StatefulWidget {
+  const itemdetailedit({super.key});
 
   @override
-  State<ItemDetail> createState() => _ItemDetailState();
+  State<itemdetailedit> createState() => _itemdetaileditState();
 }
 
-class _ItemDetailState extends State<ItemDetail> {
+class _itemdetaileditState extends State<itemdetailedit> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size; // get the screen size
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Theme.of(context).colorScheme.background,
+    ));
 
+    var screenSize = MediaQuery.of(context).size; // get the screen size
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: MyAppBar(
         showActionIcon: true,
-        actionIcon: Icons.share,
-        textAlign: TextAlign.left,
+        actionIcon: Icons.edit,
+        customizeIcon1: true,
+        icon1BackgroundColor: Theme.of(context).colorScheme.secondary,
+        icon1Color: Theme.of(context).colorScheme.primary,
         onActionIconPressed: () {
-          Navigator.of(context).push(transitionToPage(
-            const ReviewScreen(),
-            durationMillis: 500,
-          ));
+          //Action for edit Icons
+        },
+        showActionIcon2: true,
+        customizeIcon2: true,
+        actionIcon2: Icons.delete,
+        icon2BackgroundColor: Theme.of(context).colorScheme.secondary,
+        icon2Color: Theme.of(context).colorScheme.primary,
+        onActionIcon2Pressed: () {
+          //action for delete Icons
         },
       ),
       body: SingleChildScrollView(
-        // use SingleChildScrollView to avoid overflow on small devices
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
             Padding(
               padding: EdgeInsets.all(20.0 *
                   screenSize.width /
@@ -127,27 +135,6 @@ class _ItemDetailState extends State<ItemDetail> {
                 color: Colors.grey.shade700,
               ),
             ),
-            //Ower Profile Picture
-            const Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  CircleAvatar(
-                    radius: 15, // adjust as needed
-                    backgroundImage: NetworkImage(
-                      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with your image URL
-                    ), // replace with your profile picture URL
-                  ),
-                  SizedBox(width: 10), // adjust for spacing as needed
-                  Text(
-                    'Alex Adam', // replace with your profile name
-                    style: TextStyle(fontSize: 20), // adjust as needed
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20), // adjust as needed
 
             //category
             Row(
@@ -229,10 +216,17 @@ class _ItemDetailState extends State<ItemDetail> {
               child: SizedBox(
                 width: double.infinity,
                 child: MyButton(
-                  text: 'Buy Now',
+                  text: 'Update Status',
                   textColor: Theme.of(context).colorScheme.background,
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return const updateDialogbox();
+                      },
+                    );
+
                     //logic for buy button
                   },
                   fontSize: 18,

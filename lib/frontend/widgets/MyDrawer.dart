@@ -15,6 +15,7 @@ import 'package:quotaserver/frontend/screens/ProductAlertScreen.dart';
 import 'package:quotaserver/frontend/screens/ProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
+import 'package:quotaserver/frontend/screens/itemDetailEditScreen.dart';
 import 'package:quotaserver/frontend/widgets/productalertdialog.dart';
 import 'package:quotaserver/frontend/widgets/updatedialog.dart';
 
@@ -422,6 +423,30 @@ class MyDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const MyAdScreen(),
+                  ),
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ListTile(
+              title: Text(
+                "Edit Product Detail",
+                style: GoogleFonts.playfairDisplay(
+                  color: Theme.of(context).colorScheme.primary,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () => {
+                //opening the Home Page by closing the drawer
+                Navigator.pop(context),
+                //Opening the Setting Page
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ItemDetailEditScreen(),
                   ),
                 ),
               },
