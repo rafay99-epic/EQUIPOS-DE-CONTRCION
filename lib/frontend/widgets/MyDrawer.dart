@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/screens/AdConfirmScreen.dart';
 import 'package:quotaserver/frontend/screens/AdRejectScreen.dart';
 import 'package:quotaserver/frontend/screens/AdReviewScreen.dart';
+import 'package:quotaserver/frontend/screens/ArticleRegistrationScreen.dart';
+import 'package:quotaserver/frontend/screens/EditArticleRegistrationScreen.dart';
 import 'package:quotaserver/frontend/screens/EditProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/FavouriteScreen.dart';
 import 'package:quotaserver/frontend/screens/HomeScreen.dart';
@@ -447,6 +449,54 @@ class MyDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const ItemDetailEditScreen(),
+                  ),
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ListTile(
+              title: Text(
+                "Edit Article Registration",
+                style: GoogleFonts.playfairDisplay(
+                  color: Theme.of(context).colorScheme.primary,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () => {
+                //opening the Home Page by closing the drawer
+                Navigator.pop(context),
+                //Opening the Setting Page
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EditArticleRegistrationScreen(),
+                  ),
+                ),
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: ListTile(
+              title: Text(
+                "Article Registration",
+                style: GoogleFonts.playfairDisplay(
+                  color: Theme.of(context).colorScheme.primary,
+                  // fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () => {
+                //opening the Home Page by closing the drawer
+                Navigator.pop(context),
+                //Opening the Setting Page
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ArticleRegistrationScreen(),
                   ),
                 ),
               },

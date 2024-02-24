@@ -84,7 +84,7 @@ class _splashState extends State<splash> {
                 ),
               ),
               Text(
-                "https://www.quotaserv.com/",
+                "quotaserv.com",
                 style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.03, // 3% of screen width
