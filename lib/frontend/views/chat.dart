@@ -43,6 +43,12 @@ class _ChatState extends State<Chat> {
         senderId: '2',
         receiverId: '1',
       ),
+      Message(
+        text: "Sure, I can help you with something. What's up?",
+        timestamp: DateTime.now().add(const Duration(minutes: 2)),
+        senderId: '1',
+        receiverId: '2',
+      ),
       // Add more messages as needed
     ];
     final paddingSize = MediaQuery.of(context).size.width * 0.05;
@@ -129,13 +135,9 @@ class _ChatState extends State<Chat> {
                                 ), // Replace 'User Name' with the actual user name
                               ],
                             ),
-                            // Your message widget goes here
                           ],
                         ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      //New Version
+                      const SizedBox(width: 10),
                       Flexible(
                         child: Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
@@ -156,11 +158,11 @@ class _ChatState extends State<Chat> {
                                     topLeft: const Radius.circular(12),
                                     topRight: const Radius.circular(12),
                                     bottomLeft: isCurrentUser
-                                        ? const Radius.circular(0)
-                                        : const Radius.circular(12),
-                                    bottomRight: isCurrentUser
                                         ? const Radius.circular(12)
                                         : const Radius.circular(0),
+                                    bottomRight: isCurrentUser
+                                        ? const Radius.circular(0)
+                                        : const Radius.circular(12),
                                   ),
                                 ),
                                 child: Padding(
