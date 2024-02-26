@@ -54,6 +54,14 @@ To get started with the EQUIPOS DE CONTRCION project, follow these simple steps:
 
 By following these steps, you'll have the EQUIPOS DE CONTRCION project up and running on your local environment. Feel free to explore and contribute to the development of this exciting project!
 
+-
+
+## Project Design
+
+Explore the comprehensive design of our project on Figma! The project design and layout are available in detail on Figma, providing insights into the visual aspects and user experience. Click the link below to access the Figma file:
+
+[Project Figma File](https://www.figma.com/file/2rUZHCqtXByfawL9l7MvrS/Quotaserv?type=design&node-id=0-1&mode=design&t=K4n8r2ElbR86D1pm-0)
+
 ## APK File
 
 Explore the latest and most stable version of our project by accessing the dedicated ['apk'](https://github.com/rafay99-epic/EQUIPOS-DE-CONTRCION/tree/apk) branch.
