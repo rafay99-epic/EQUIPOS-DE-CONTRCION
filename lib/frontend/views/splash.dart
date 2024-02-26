@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quotaserver/constant/animation/animationFade.dart';
+import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
 import 'package:quotaserver/frontend/screens/LoginScreen.dart';
 
 // ignore: camel_case_types
@@ -19,10 +19,12 @@ class _splashState extends State<splash> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-        Navigator.of(context).push(transitionToPageFade(
-          const LoginScreen(),
-          durationSeconds: 4,
-        ));
+        Navigator.of(context).push(
+          transitionToPage(
+            const LoginScreen(),
+            durationSeconds: 3,
+          ),
+        );
       },
     );
   }
@@ -43,7 +45,7 @@ class _splashState extends State<splash> {
             children: [
               SizedBox(height: screenHeight * 0.2), // 20% of screen height
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: Text(
                   "E.D.C",
                   style: GoogleFonts.poppins(
@@ -53,19 +55,18 @@ class _splashState extends State<splash> {
                   ),
                 ),
               ),
-              SizedBox(height: screenHeight * 0.02), // 2% of screen height
               FittedBox(
+                alignment: Alignment.center,
                 child: Text(
                   "EQUIPOSE DE CONTRACION",
                   style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: screenWidth * 0.1, // 10% of screen width
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.10,
+                height: screenHeight * 0.13,
               ), // 7% of screen height
               SvgPicture.asset(
                 'assets/svg/splash.svg',
@@ -88,6 +89,7 @@ class _splashState extends State<splash> {
                 style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.03, // 3% of screen width
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

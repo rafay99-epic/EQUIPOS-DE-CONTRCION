@@ -172,7 +172,7 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                               ],
                             ),
                             const MyTexxtStyle(
-                              text: 'Rs.0 - USD 3,000,000.00',
+                              text: 'US.0 - USD 3,000,000.00',
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),

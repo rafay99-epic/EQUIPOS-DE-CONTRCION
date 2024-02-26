@@ -61,7 +61,7 @@ class _LoginState extends State<Login> {
               ),
               Center(
                 child: Text(
-                  "Welcome to CarStore",
+                  "Welcome to E.D.C",
                   style: GoogleFonts.poppins(
                     fontSize: 14,
                     color: Theme.of(context).colorScheme.primary,

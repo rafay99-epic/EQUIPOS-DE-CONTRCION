@@ -89,7 +89,9 @@ class _ChatState extends State<Chat> {
                   "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
             ),
             const SizedBox(
-                width: 10), // Add some spacing between the image and text
+              width: 10,
+              height: 40,
+            ), // Add some spacing between the image and text
             Text(
               "Alex Adam", // Replace "User Name" with the actual user name from Firebase
               style: GoogleFonts.poppins(
@@ -132,7 +134,7 @@ class _ChatState extends State<Chat> {
                                 Text(
                                   'John King',
                                   style: TextStyle(color: Colors.white),
-                                ), // Replace 'User Name' with the actual user name
+                                ),
                               ],
                             ),
                           ],
