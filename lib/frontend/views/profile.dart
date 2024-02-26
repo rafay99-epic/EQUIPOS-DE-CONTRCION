@@ -6,6 +6,7 @@ import 'package:quotaserver/frontend/screens/ChatScreen.dart';
 import 'package:quotaserver/frontend/screens/ItemDetailScreen.dart';
 import 'package:quotaserver/frontend/widgets/imagebox.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
+import 'package:quotaserver/frontend/widgets/reportDialog.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
 
@@ -23,109 +24,6 @@ class _ProfileState extends State<Profile> {
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _phoneNumberController =
         TextEditingController();
-    void _showDialog() {
-      showGeneralDialog(
-        context: context,
-        barrierDismissible: true,
-        barrierLabel:
-            MaterialLocalizations.of(context).modalBarrierDismissLabel,
-        barrierColor: Colors.black45,
-        transitionDuration: const Duration(milliseconds: 200),
-        pageBuilder: (
-          BuildContext buildContext,
-          Animation animation,
-          Animation secondaryAnimation,
-        ) {
-          return Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Material(
-                type: MaterialType.transparency,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  width: MediaQuery.of(context).size.width - 40,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        MyTexxtStyle(
-                          text: "Report Profile",
-                          color: Theme.of(context).colorScheme.primary,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 22,
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            MyTexxtStyle(
-                              text: '• False Information',
-                              textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            MyTexxtStyle(
-                              text: '• Hate speech or symbols',
-                              textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            MyTexxtStyle(
-                              text: '• Bullying or harassment',
-                              textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            MyTexxtStyle(
-                              text: '• Spam',
-                              textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        MyButton(
-                          text: "Report",
-                          textColor: Colors.red,
-                          backgroundColor: Colors.transparent,
-                          onTap: () {
-                            //logic for firebase and sending the report to the backend
-                          },
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          width: double.infinity,
-                          isBold: true,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          );
-        },
-      );
-    }
 
     List<ImageBox> imageBoxes = <ImageBox>[
       ImageBox(
@@ -164,17 +62,15 @@ class _ProfileState extends State<Profile> {
           ));
         },
       ),
-      // Add more ImageBox widgets as needed
     ];
 
     // Variables
     var screenSize = MediaQuery.of(context).size;
-    // Calculate padding and margin based on screen size
-    var padding = screenSize.width * 0.01; // 1% of screen width
+    var padding = screenSize.width * 0.01;
     String imageUrl =
         "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Replace with your image URL
-    String name = "Alex Adam"; // Replace with the name
-    String twitterId = "@alexadam"; // Replace with the Twitter ID
+    String name = "Alex Adam";
+    String twitterId = "@alexadam";
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
@@ -182,9 +78,10 @@ class _ProfileState extends State<Profile> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.more_vert, color: Colors.white),
-            onPressed: _showDialog,
-          ),
+              icon: const Icon(Icons.more_vert, color: Colors.white),
+              onPressed: () {
+                showReportDialog(context);
+              }),
         ],
       ),
       body: SingleChildScrollView(
