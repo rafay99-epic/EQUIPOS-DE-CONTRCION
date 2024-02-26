@@ -192,6 +192,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 controller: _reEnterPhoneNumberController,
                 icons: Icons.phone,
                 onlyNumber: true,
+                showIcon: true,
               ),
 
               const SizedBox(
@@ -203,6 +204,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: true,
                 controller: _passwordController,
                 icons: Icons.password,
+                showIcon: true,
               ),
               const SizedBox(
                 height: 20,
@@ -212,6 +214,7 @@ class _SellRegistrationState extends State<SellRegistration> {
                 obsuretext: true,
                 controller: _reEnterpasswordController,
                 icons: Icons.password,
+                showIcon: true,
               ),
               // request Item Button In Button
               SizedBox(
