@@ -1,6 +1,6 @@
 <p align="center">
     <a herf="https://future-insight.blog/">
-    <img src="assets/images/logo_1.png" alt="Future Insight"  width="230px" height="230px">
+    <img src="assets/images/logo_1.png" alt="EQUIPOS DE CONTRCION"  width="230px" height="230px">
     </a>
   <br>
 </p>
