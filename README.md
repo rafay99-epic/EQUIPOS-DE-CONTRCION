@@ -54,6 +54,12 @@ To get started with the EQUIPOS DE CONTRCION project, follow these simple steps:
 
 By following these steps, you'll have the EQUIPOS DE CONTRCION project up and running on your local environment. Feel free to explore and contribute to the development of this exciting project!
 
+## APK File
+
+Explore the latest and most stable version of our project by accessing the dedicated ['apk'](https://github.com/rafay99-epic/EQUIPOS-DE-CONTRCION/tree/apk) branch.
+
+This branch serves as the repository for the APK file, providing you with quick and easy access to the application's installable package. Whether you're looking to test the latest features or ensure stability, the 'apk' branch keeps you up-to-date with the most recent releases. Simply navigate to the 'apk' branch to access the latest APK file directly from the main repository.
+
 <h2>Contact Information:</h2>
 <p>If you encounter any issues or have any questions, feel free to reach out to me. Here are my contact details:</p>
 <ul>
