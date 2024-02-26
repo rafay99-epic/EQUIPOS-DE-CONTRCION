@@ -36,7 +36,9 @@ class _SignUpState extends State<SignUp> {
             Center(
               // Logo will come
               child: Image.asset(
-                'assets/images/logo.png',
+                'assets/images/logo_1.png',
+                width: 150,
+                height: 150,
               ),
             ),
             const SizedBox(
