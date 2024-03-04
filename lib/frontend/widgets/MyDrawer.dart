@@ -19,11 +19,26 @@ import 'package:quotaserver/frontend/screens/ProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
 import 'package:quotaserver/frontend/screens/itemDetailEditScreen.dart';
+import 'package:quotaserver/frontend/widgets/languageSwitch.dart';
 import 'package:quotaserver/frontend/widgets/productalertdialog.dart';
 import 'package:quotaserver/frontend/widgets/updatedialog.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
+
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  bool _isEnglish = true; // Default language
+
+  void _toggleLanguage(bool isEnglish) {
+    setState(() {
+      _isEnglish = isEnglish; // Update the language when the toggle is switched
+    });
+    // Update the locale of your application here
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -503,22 +518,11 @@ class MyDrawer extends StatelessWidget {
               },
             ),
           ),
-          // ListTile(
-          //   title: Text(
-          //     Get.locale == const Locale('en', 'US') ? 'English' : 'Spanish',
-          //     style: GoogleFonts.playfairDisplay(
-          //       color: Theme.of(context).colorScheme.primary,
-          //     ),
-          //   ),
-          //   trailing: Switch(
-          //     value: Get.locale == Locale('en', 'US'),
-          //     onChanged: (bool value) {
-          //       Locale newLocale =
-          //           value ? Locale('en', 'US') : Locale('es', 'ES');
-          //       Get.updateLocale(newLocale);
-          //     },
-          //   ),
-          // ),
+          LanguageToggle(
+            isEnglish: _isEnglish,
+            onToggle:
+                _toggleLanguage, // Provide the method to toggle the language
+          ),
         ],
       ),
     );
