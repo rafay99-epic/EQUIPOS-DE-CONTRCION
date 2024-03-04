@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
 
 class adreview extends StatefulWidget {
@@ -25,14 +26,16 @@ class _adreviewState extends State<adreview> {
               const SizedBox(
                 height: 30,
               ),
-              const MyTexxtStyle(
-                text: "Ad Confirmed !",
+              MyTexxtStyle(
+                // text: "Ad Confirmed !",
+                text: AppLocalizations.of(context)!.adConfirmed,
                 fontSize: 28,
                 fontWeight: FontWeight.w600,
               ),
-              const MyTexxtStyle(
-                text:
-                    "Your order has been confirmed, we will send you confirmation email shortly.",
+              MyTexxtStyle(
+                text: AppLocalizations.of(context)!.orderConfirmed,
+                // text:
+                //     "Your order has been confirmed, we will send you confirmation email shortly.",
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
                 textAlign: TextAlign.center,

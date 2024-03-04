@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/screens/AdConfirmScreen.dart';
 import 'package:quotaserver/frontend/screens/AdRejectScreen.dart';
@@ -502,6 +504,22 @@ class MyDrawer extends StatelessWidget {
               },
             ),
           ),
+          // ListTile(
+          //   title: Text(
+          //     Get.locale == const Locale('en', 'US') ? 'English' : 'Spanish',
+          //     style: GoogleFonts.playfairDisplay(
+          //       color: Theme.of(context).colorScheme.primary,
+          //     ),
+          //   ),
+          //   trailing: Switch(
+          //     value: Get.locale == Locale('en', 'US'),
+          //     onChanged: (bool value) {
+          //       Locale newLocale =
+          //           value ? Locale('en', 'US') : Locale('es', 'ES');
+          //       Get.updateLocale(newLocale);
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

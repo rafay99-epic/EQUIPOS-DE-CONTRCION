@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class adConfirm extends StatefulWidget {
   const adConfirm({super.key});
@@ -30,7 +31,8 @@ class _adConfirmState extends State<adConfirm> {
                 height: screenSize.height * 0.02,
               ),
               Text(
-                'Ad Confirm ',
+                // 'Ad Confirm ',
+                AppLocalizations.of(context)!.adConfirm,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.black,
@@ -39,7 +41,8 @@ class _adConfirmState extends State<adConfirm> {
                 ),
               ),
               Text(
-                'IYour order has been confirmed, we will send you confirmation email shortly.',
+                AppLocalizations.of(context)!.orderConfirmed,
+                // 'I Your order has been confirmed, we will send you confirmation email shortly.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.grey,

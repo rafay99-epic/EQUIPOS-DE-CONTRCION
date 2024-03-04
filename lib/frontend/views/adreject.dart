@@ -53,6 +53,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class adreject extends StatefulWidget {
   const adreject({super.key});
@@ -85,7 +86,8 @@ class _adrejectState extends State<adreject> {
                 height: screenSize.height * 0.05,
               ),
               Text(
-                'Try Again',
+                // 'Try Again',
+                AppLocalizations.of(context)!.tryAgain,
                 style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontSize: screenSize.width * 0.07,
@@ -93,7 +95,8 @@ class _adrejectState extends State<adreject> {
                 ),
               ),
               Text(
-                'If problems persist please email: admin@equiposdeconstruccion.com',
+                AppLocalizations.of(context)!.ifProblemsPersist,
+                // 'If problems persist please email: admin@equiposdeconstruccion.com',
                 style: GoogleFonts.poppins(
                   color: Colors.grey,
                   fontSize: screenSize.width * 0.03,

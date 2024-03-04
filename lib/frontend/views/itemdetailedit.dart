@@ -7,6 +7,7 @@ import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
 import 'package:quotaserver/frontend/widgets/updatedialog.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class itemdetailedit extends StatefulWidget {
   const itemdetailedit({super.key});
@@ -57,17 +58,20 @@ class _itemdetaileditState extends State<itemdetailedit> {
                     .cover, // this is to make sure the image covers the entire space
                 errorBuilder: (context, error, stackTrace) {
                   // handle image loading errors
-                  return const Center(child: Text('Error loading image'));
+                  return Center(
+                    child: Text(
+                        AppLocalizations.of(context)!.errorLoadingAssetImage),
+                  );
                 },
               ),
             ),
             //People View Count
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: "People View Count/ within last hour 21",
+                  text: AppLocalizations.of(context)!.peopleViewCount,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey,
@@ -75,15 +79,17 @@ class _itemdetaileditState extends State<itemdetailedit> {
               ),
             ),
             //Title of the Image
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Row(
                 children: [
                   Expanded(
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: MyTexxtStyle(
-                        text: 'Undercarriage',
+                        // text: 'Undercarriage',
+                        text: AppLocalizations.of(context)!.undercarriage,
+
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.left,
@@ -91,14 +97,15 @@ class _itemdetaileditState extends State<itemdetailedit> {
                     ),
                   ),
                   MyTexxtStyle(
-                    text: '4.5/5', // replace with your dynamic rating
+                    text: AppLocalizations.of(context)!
+                        .rating, // replace with your dynamic rating
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.star,
                     size: 30,
                     color: Colors.amber,
@@ -118,7 +125,7 @@ class _itemdetaileditState extends State<itemdetailedit> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: "Rs: 1800000",
+                  text: "US: 1800000",
                   color: Colors.grey,
                   fontWeight: FontWeight.w500,
                 ),
@@ -128,8 +135,7 @@ class _itemdetaileditState extends State<itemdetailedit> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: MyTexxtStyle(
-                text:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam nam eu nulla a. Vestibulum aliquet facilisi interdum nibh blandit Read more...",
+                text: AppLocalizations.of(context)!.loremIpsum,
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 color: Colors.grey.shade700,
@@ -164,8 +170,9 @@ class _itemdetaileditState extends State<itemdetailedit> {
                       width: 30, // adjust as needed
                     ),
                     const SizedBox(width: 8), // adjust for spacing as needed
-                    const MyTexxtStyle(
-                      text: 'Car Detail',
+                    MyTexxtStyle(
+                      // text: 'Car Detail',
+                      text: AppLocalizations.of(context)!.carDetail,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
@@ -200,8 +207,9 @@ class _itemdetaileditState extends State<itemdetailedit> {
                       width: 30, // adjust as needed
                     ),
                     const SizedBox(width: 8), // adjust for spacing as needed
-                    const MyTexxtStyle(
-                      text: 'EMI/Loan',
+                    MyTexxtStyle(
+                      // text: 'EMI/Loan',
+                      text: AppLocalizations.of(context)!.emiLoan,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),

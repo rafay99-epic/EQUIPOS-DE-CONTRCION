@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/reviewCard.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class review extends StatefulWidget {
   const review({super.key});
@@ -19,7 +20,8 @@ class _reviewState extends State<review> {
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         title: Text(
-          'Reviews',
+          // 'Reviews',
+          AppLocalizations.of(context)!.reviews,
           style: GoogleFonts.poppins(
               color: Theme.of(context).colorScheme.onBackground),
         ),
@@ -82,7 +84,8 @@ class _reviewState extends State<review> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20.0),
         child: MyButton(
-          text: "Give Feedback",
+          // text: "Give Feedback",
+          text: AppLocalizations.of(context)!.giveFeedback,
           textColor: Colors.white,
           backgroundColor: Theme.of(context).colorScheme.secondary,
           onTap: () {
@@ -105,7 +108,9 @@ void showReviewDialog(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         backgroundColor: Colors.white,
-        title: const Text('Give Review'),
+        title: Text(
+          AppLocalizations.of(context)!.giveReview,
+        ),
         content: StatefulBuilder(
           builder: (BuildContext context, StateSetter setState) {
             return Column(
@@ -145,10 +150,11 @@ void showReviewDialog(BuildContext context) {
                   child: TextField(
                     controller: reviewController,
                     maxLines: 5,
-                    decoration: const InputDecoration(
-                      hintText: 'Feedback',
+                    decoration: InputDecoration(
+                      // hintText: 'Feedback',
+                      hintText: AppLocalizations.of(context)!.feedback,
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.all(10.0),
+                      contentPadding: const EdgeInsets.all(10.0),
                     ),
                   ),
                 ),
@@ -158,7 +164,8 @@ void showReviewDialog(BuildContext context) {
         ),
         actions: <Widget>[
           MyButton(
-            text: "Send Feedback",
+            text: AppLocalizations.of(context)!.feedback,
+            // text: "Send Feedback",
             textColor: Colors.white,
             backgroundColor: Colors.amber,
             onTap: () {

@@ -4,6 +4,7 @@ import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/ranger.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class MyFilterDialogBox extends StatefulWidget {
   const MyFilterDialogBox({super.key});
@@ -37,7 +38,8 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                   tabs: [
                     Tab(
                       child: Text(
-                        'All',
+                        // 'All',
+                        AppLocalizations.of(context)!.all,
                         style: GoogleFonts.lato(
                           color: Theme.of(context).colorScheme.secondary,
                           fontSize: 22, // Change font size
@@ -47,7 +49,8 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                     ),
                     Tab(
                       child: Text(
-                        'New',
+                        // 'New',
+                        AppLocalizations.of(context)!.newtag,
                         style: GoogleFonts.lato(
                           color: Theme.of(context).colorScheme.secondary,
                           fontSize: 22, // Change font size
@@ -57,7 +60,8 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                     ),
                     Tab(
                       child: Text(
-                        'Used',
+                        // 'Used',
+                        AppLocalizations.of(context)!.used,
                         style: GoogleFonts.lato(
                           color: Theme.of(context).colorScheme.secondary,
                           fontSize: 22, // Change font size
@@ -89,7 +93,9 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                               child: DropdownButton<String>(
                                 isExpanded: true, // add this
 
-                                hint: const Text('Category'),
+                                hint: Text(
+                                  AppLocalizations.of(context)!.category,
+                                ),
                                 items: <String>['A', 'B', 'C', 'D']
                                     .map((String value) {
                                   return DropdownMenuItem<String>(
@@ -105,7 +111,9 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                             ),
                             Expanded(
                               child: DropdownButton<String>(
-                                hint: const Text('Model'),
+                                hint: Text(
+                                  AppLocalizations.of(context)!.model,
+                                ),
                                 isExpanded: true, // add this
 
                                 items: <String>['1', '2', '3', '4']
@@ -128,7 +136,7 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 0.0), // adjust this value as needed
                         child: MyTextFeild(
-                          hintText: "Location",
+                          hintText: AppLocalizations.of(context)!.location,
                           obsuretext: false,
                           controller: _location,
                           showIcon: true,
@@ -149,8 +157,9 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                           crossAxisAlignment: CrossAxisAlignment
                               .start, // Aligns children to the right
                           children: <Widget>[
-                            const MyTexxtStyle(
-                              text: "Price Range",
+                            MyTexxtStyle(
+                              // text: "Price Range",
+                              text: AppLocalizations.of(context)!.priceRange,
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
                             ),
@@ -164,8 +173,9 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                                 const SizedBox(
                                     width:
                                         10), // add some space between the image and the text
-                                const MyTexxtStyle(
-                                  text: 'Precios estan en US dollares',
+                                MyTexxtStyle(
+                                  // text: 'Precios estan en US dollares',
+                                  text: AppLocalizations.of(context)!.precio,
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                 ), // adjust as needed
@@ -194,7 +204,8 @@ class _MyFilterDialogBoxState extends State<MyFilterDialogBox> {
                             screenSize.width * 0.05,
                           ), // Adjust the padding as needed
                           child: MyButton(
-                            text: "Search",
+                            // text: "Search",
+                            text: AppLocalizations.of(context)!.search,
                             textColor: Theme.of(context).colorScheme.tertiary,
                             backgroundColor:
                                 Theme.of(context).colorScheme.secondary,

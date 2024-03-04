@@ -9,6 +9,7 @@ import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/reportDialog.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -27,10 +28,9 @@ class _ProfileState extends State<Profile> {
 
     List<ImageBox> imageBoxes = <ImageBox>[
       ImageBox(
-        imageUrl:
-            'https://s3-alpha-sig.figma.com/img/5186/2a41/855a43d6007b38137684e81a9d33eb00?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HLedkk6DnOI22aDRFSsvBBJzKhvvO~zhxMCUzOKSKTyHhNXzZ8WhzWfalIs33NI8Dw1-CUHd4dye6~ZY3QG3Z91qgnExwTOK0iIiR9fFaFnr9Xq515w2SdmmC6D-WTlfxN31xBmUqzGdeZHOfy5DCuadwyotAjRGr5jxQpFGkSiWxNyOKY-a2B7HHXAiup-q7cNs2601-vHAo1vOytuz3V8EY8sK3zzSWW3xvLUeR3b6LVU7X86CtYw8-PPjgS-GB4DNHgSPvNaG~XFpjWAVzBhLClGKjEEQg2VM2qDEdWI8QUnmEoU5rv2yaLiDmWUTi6T-NihuMtKfLR4Z39nBPw__',
+        imageUrl: 'assets/images/image01.png',
         price: ' 54,77,823.73',
-        title: 'Lorem ipsum',
+        title: 'Lorem Ipsum',
         onTap: () {
           Navigator.of(context).push(transitionToPage(
             const ItemDetailScreen(),
@@ -39,10 +39,9 @@ class _ProfileState extends State<Profile> {
         },
       ),
       ImageBox(
-        imageUrl:
-            "https://s3-alpha-sig.figma.com/img/afac/69f0/d71dd0fd18ee6822dfb29b15af40d972?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bp~Qmu-3MUTwhwnaVnZ75cFINHtz3Mw9lFaNzaNN-e5EzXCNLMoQZnuwTSG~OB6luFhrdrlLHN5ggV~wzt4rZYJZ5xTWgvfeFYkQGb-ROIYi51GQU2fzrRsbeTyfPmNVPHtgUvEHziSilLN1dmZP2etqpYkMmumKIdE0Hj6Z9IEpLK~daow8~WgAAcpg5uLxOviCvYoZH7XeK0e-ZxX1q3eMVtuaQ0n5OZe5RqJT8Nd68jPyvmf~X2qEAkv0Ak0G5mTSA2Dyvnsq2IZLRm6sj6hBwgZhOOpyxyDAE6XVfG7ej1FouqYtr~ipNaHPz917GlT20VLkSZzOdnlhYoEejw__",
+        imageUrl: "assets/images/image02.png",
         price: ' 5,85,000',
-        title: "Lorem ipsum",
+        title: "Lorem Ipsum",
         onTap: () {
           Navigator.of(context).push(transitionToPage(
             const ItemDetailScreen(),
@@ -51,10 +50,20 @@ class _ProfileState extends State<Profile> {
         },
       ),
       ImageBox(
-        imageUrl:
-            'https://s3-alpha-sig.figma.com/img/0f32/1be1/d8c025f567bfb467b510552115d4dde9?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ild6o30heFXJn~M3SD67TktsbTYVbp~peKk1NPhJhXCZ53EkY2fLPoUjeY2Id8Rr-AeYtdaY7KTTPFfLXG36nugfk8oEwdt-xooqGGZgCoIa7ajzs~NKw5XALxNF4aCnnypHJMrAwqaaIz7yMG~uztPyJcdWrXMgjnb50aLqxuW1J4vdiRg9-hh0PIpK0z03svaTHxHpPwWSa51e9pEeUeUwfjzy2SXRgBo6YHkcjU7mpJyTJf0hCovnkQgbEtojzHN6tr7VK5wxqqa555~-nB26UQSASmEz-Z6KAPcB44kQn8-QOv3KJumuUp4IernRdZVYaclHGMkMZ4SQbd1Z~A__',
-        price: ' 5,85,000',
-        title: "Lorem ipsum",
+        imageUrl: "assets/images/image03.png",
+        price: '300',
+        title: "Car 03",
+        onTap: () {
+          Navigator.of(context).push(transitionToPage(
+            const ItemDetailScreen(),
+            durationMillis: 500,
+          ));
+        },
+      ),
+      ImageBox(
+        imageUrl: "assets/images/image04.png",
+        price: '300',
+        title: "Car 03",
         onTap: () {
           Navigator.of(context).push(transitionToPage(
             const ItemDetailScreen(),
@@ -148,7 +157,9 @@ class _ProfileState extends State<Profile> {
                                   screenSize.width * 0.05,
                                 ),
                                 child: MyButton(
-                                  text: "Send Message",
+                                  // text: "Send Message",
+                                  text:
+                                      AppLocalizations.of(context)!.sendMessage,
                                   textColor:
                                       Theme.of(context).colorScheme.secondary,
                                   backgroundColor:
@@ -169,7 +180,8 @@ class _ProfileState extends State<Profile> {
                               height: 30,
                             ),
                             MyTextFeild(
-                              hintText: 'Full Name',
+                              // hintText: 'Full Name',
+                              hintText: AppLocalizations.of(context)!.fullName,
                               obsuretext: false,
                               controller: _nameController,
                               showShadow: false,
@@ -179,7 +191,9 @@ class _ProfileState extends State<Profile> {
                               height: 20,
                             ),
                             MyTextFeild(
-                              hintText: 'Email adress',
+                              // hintText: 'Email adress',
+                              hintText:
+                                  AppLocalizations.of(context)!.emailAdress,
                               obsuretext: false,
                               controller: _emailController,
                               showShadow: false,
@@ -189,21 +203,25 @@ class _ProfileState extends State<Profile> {
                               height: 20,
                             ),
                             MyTextFeild(
-                              hintText: 'Phone Number',
+                              // hintText: 'Phone Number',
+                              hintText:
+                                  AppLocalizations.of(context)!.phoneNumber,
                               obsuretext: false,
                               controller: _phoneNumberController,
                               showShadow: false,
                               onlyNumber: true,
                               showIcon: false,
                             ),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 25, top: 25),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 25, top: 25),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   MyTexxtStyle(
-                                    text: 'Products ',
+                                    // text: 'Products ',
+                                    text:
+                                        AppLocalizations.of(context)!.products,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w500,
                                   ),

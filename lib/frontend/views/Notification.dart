@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/widgets/NotificationCards.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NotificationSeen extends StatefulWidget {
   const NotificationSeen({super.key});
@@ -29,7 +30,8 @@ class _NotificationSeenState extends State<NotificationSeen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Notifications',
+                    // 'Notifications',
+                    AppLocalizations.of(context)!.notifications,
                     style: GoogleFonts.poppins(
                       fontSize: 19,
                       color: Colors.grey.shade900,

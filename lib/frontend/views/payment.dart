@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class Payment extends StatefulWidget {
   Payment({Key? key}) : super(key: key);
@@ -44,7 +45,8 @@ class _PaymentState extends State<Payment> {
     return Scaffold(
       appBar: MyAppBar(
         showTitle: true,
-        headTitle: "Payment",
+        // headTitle: "Payment",
+        headTitle: AppLocalizations.of(context)!.payment,
         textAlign: TextAlign.left,
         titleColor: Theme.of(context).colorScheme.primary,
       ),
@@ -81,7 +83,9 @@ class _PaymentState extends State<Payment> {
                             TextField(
                               controller: _cardNameController,
                               decoration: InputDecoration(
-                                labelText: 'Card Name',
+                                // labelText: 'Card Name',
+                                labelText:
+                                    AppLocalizations.of(context)!.cardName,
                                 labelStyle: GoogleFonts.poppins(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
@@ -92,7 +96,9 @@ class _PaymentState extends State<Payment> {
                             TextField(
                               controller: _cardNumberController,
                               decoration: InputDecoration(
-                                labelText: 'Card Number',
+                                // labelText: 'Card Number',
+                                labelText:
+                                    AppLocalizations.of(context)!.cardNumber,
                                 labelStyle: GoogleFonts.poppins(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w500,
@@ -107,7 +113,9 @@ class _PaymentState extends State<Payment> {
                                   child: TextField(
                                     controller: _expiryMonthController,
                                     decoration: InputDecoration(
-                                      labelText: 'MM',
+                                      // labelText: 'MM',
+                                      labelText:
+                                          AppLocalizations.of(context)!.mm,
                                       labelStyle: GoogleFonts.poppins(
                                         color: Colors.grey,
                                         fontWeight: FontWeight.w500,
@@ -122,7 +130,9 @@ class _PaymentState extends State<Payment> {
                                   child: TextField(
                                     controller: _expiryYearController,
                                     decoration: InputDecoration(
-                                      labelText: 'YY',
+                                      // labelText: 'YY',
+                                      labelText:
+                                          AppLocalizations.of(context)!.yy,
                                       labelStyle: GoogleFonts.poppins(
                                         color: Colors.grey,
                                         fontWeight: FontWeight.w500,
@@ -139,7 +149,9 @@ class _PaymentState extends State<Payment> {
                                   child: TextField(
                                     controller: _cvvNumberController,
                                     decoration: InputDecoration(
-                                      labelText: 'CVV',
+                                      // labelText: 'CVV',
+                                      labelText:
+                                          AppLocalizations.of(context)!.cvv,
                                       labelStyle: GoogleFonts.poppins(
                                         color: Colors.grey,
                                         fontWeight: FontWeight.w500,
@@ -193,8 +205,10 @@ class _PaymentState extends State<Payment> {
                         style: DefaultTextStyle.of(context).style,
                         children: <TextSpan>[
                           TextSpan(
-                            text:
-                                'By tapping “AGREE AND CONTINUE” I accept the Simply Poem ',
+                            // text:
+                            //     'By tapping “AGREE AND CONTINUE” I accept the Simply Poem ',
+                            text: AppLocalizations.of(context)!
+                                .byTappingAGREEANDCONTINUEIAcceptTheSimplyPoem,
                             style: GoogleFonts.roboto(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
@@ -202,8 +216,10 @@ class _PaymentState extends State<Payment> {
                             ),
                           ),
                           TextSpan(
-                            text:
-                                'Payment Terms & Conditions, General Terms and Conditions, ',
+                            text: AppLocalizations.of(context)!
+                                .paymentTermsConditionsGeneralTermsAndConditionsAndPrivacyAndCookiesNotice,
+                            // text:
+                            //     'Payment Terms & Conditions, General Terms and Conditions, ',
                             style: GoogleFonts.roboto(
                               color: Theme.of(context).colorScheme.secondary,
                               fontWeight: FontWeight.w500,
@@ -211,7 +227,8 @@ class _PaymentState extends State<Payment> {
                             ),
                           ),
                           TextSpan(
-                            text: 'and ',
+                            // text: 'and ',
+                            text: AppLocalizations.of(context)!.and,
                             style: GoogleFonts.roboto(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
@@ -219,7 +236,9 @@ class _PaymentState extends State<Payment> {
                             ),
                           ),
                           TextSpan(
-                            text: 'Privacy and Cookies Notice',
+                            text: AppLocalizations.of(context)!
+                                .privacyandcookiesnotice,
+                            // text: 'Privacy and Cookies Notice',
                             style: GoogleFonts.roboto(
                               color: Theme.of(context).colorScheme.secondary,
                               fontWeight: FontWeight.w500,
@@ -245,7 +264,8 @@ class _PaymentState extends State<Payment> {
                       screenSize.width * 0.01,
                     ), // Adjust the padding as needed
                     child: MyButton(
-                      text: "Agree & Continue",
+                      text: AppLocalizations.of(context)!.agreeContinue,
+                      // text: "Agree & Continue",
                       textColor: Theme.of(context).colorScheme.tertiary,
                       backgroundColor: Theme.of(context).colorScheme.secondary,
                       onTap: () => {

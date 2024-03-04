@@ -55,7 +55,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 headTitle ?? '',
                 textAlign: textAlign,
                 style: GoogleFonts.poppins(
-                  fontSize: 24,
+                  fontSize: 18,
                   color: titleColor,
                   fontWeight: FontWeight.w600,
                 ),
