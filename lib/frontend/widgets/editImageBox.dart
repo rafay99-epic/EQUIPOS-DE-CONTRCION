@@ -39,14 +39,6 @@ class ImageBoxEdit extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                // Expanded(
-                //   child: imageUrl != null
-                //       ? Image.network(
-                //           imageUrl!,
-                //           fit: BoxFit.cover,
-                //         )
-                //       : Container(),
-                // ),
                 Expanded(
                   child: imageUrl != null
                       ? imageUrl!.startsWith('http')
