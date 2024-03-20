@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class ItemNotFound extends StatefulWidget {
   const ItemNotFound({super.key});
@@ -51,7 +52,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
               ),
               Center(
                 child: Text(
-                  "Item not Found",
+                  // "Item not Found",
+                  AppLocalizations.of(context)!.itemNotFound,
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -66,7 +68,9 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
-                    "Sorry, the item you are looking for is not available at the moment, but if you would like us to notify you when one goes on sale, please provide the following information:",
+                    AppLocalizations.of(context)!
+                        .sorryTheItemYouAreLookingForIsNotAvailableAtTheMomentButIfYouWouldLikeUsToNotifyYouWhenOneGoesOnSalePleaseProvideTheFollowingInformation,
+                    // "Sorry, the item you are looking for is not available at the moment, but if you would like us to notify you when one goes on sale, please provide the following information:",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
@@ -76,7 +80,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 ),
               ),
               MyTextFeild(
-                hintText: 'Category',
+                // hintText: 'Category',
+                hintText: AppLocalizations.of(context)!.category,
                 obsuretext: false,
                 controller: _categoryController,
                 showIcon: false,
@@ -86,7 +91,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Brand',
+                // hintText: 'Brand',
+                hintText: AppLocalizations.of(context)!.brand,
                 obsuretext: false,
                 controller: _brandController,
                 showIcon: false,
@@ -96,7 +102,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Model',
+                // hintText: 'Model',
+                hintText: AppLocalizations.of(context)!.model,
                 obsuretext: false,
                 controller: _modelController,
                 showIcon: false,
@@ -106,7 +113,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Budget US Dollar (USD)',
+                // hintText: 'Budget US Dollar (USD)',
+                hintText: AppLocalizations.of(context)!.budgetUSD,
                 obsuretext: false,
                 controller: _budgetController,
                 showShadow: false,
@@ -117,7 +125,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'When you need it',
+                // hintText: 'When you need it',
+                hintText: AppLocalizations.of(context)!.whenYouNeedIt,
                 obsuretext: false,
                 controller: _timeNeededController,
                 showIcon: false,
@@ -127,7 +136,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Name',
+                // hintText: 'Name',
+                hintText: AppLocalizations.of(context)!.name,
                 obsuretext: false,
                 controller: _nameController,
                 showShadow: false,
@@ -137,7 +147,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'City and Country',
+                // hintText: 'City and Country',
+                hintText: AppLocalizations.of(context)!.cityAndCountry,
                 obsuretext: false,
                 controller: _cityCountryController,
                 showIcon: false,
@@ -147,7 +158,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Email',
+                // hintText: 'Email',
+                hintText: AppLocalizations.of(context)!.email,
                 obsuretext: false,
                 controller: _emailController,
                 showIcon: false,
@@ -157,7 +169,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                 height: 10,
               ),
               MyTextFeild(
-                hintText: 'Phone Number',
+                // hintText: 'Phone Number',
+                hintText: AppLocalizations.of(context)!.phoneNumber,
                 obsuretext: false,
                 controller: _phoneNumberController,
                 showShadow: false,
@@ -176,7 +189,8 @@ class _ItemNotFoundState extends State<ItemNotFound> {
                     screenSize.width * 0.05,
                   ),
                   child: MyButton(
-                    text: "Request Item",
+                    // text: "Request Item",
+                    text: AppLocalizations.of(context)!.requestItem,
                     textColor: Theme.of(context).colorScheme.tertiary,
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     onTap: () => {

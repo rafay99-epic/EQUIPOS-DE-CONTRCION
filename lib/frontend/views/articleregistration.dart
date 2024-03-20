@@ -1,10 +1,13 @@
 // ignore_for_file: unnecessary_new, camel_case_types, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:image_picker/image_picker.dart';
 
 class articleRegistration extends StatefulWidget {
   const articleRegistration({super.key});
@@ -17,6 +20,19 @@ class _articleRegistrationState extends State<articleRegistration> {
   String? _radioValue; // stores current selected value
   String? dropdownValue1;
   String? dropdownValue2;
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (image != null) {
+        _image = File(image.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   void _handleRadioValueChange(String? value) {
     setState(() {
@@ -55,17 +71,19 @@ class _articleRegistrationState extends State<articleRegistration> {
               const SizedBox(
                 height: 20,
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: 'Title',
+                  // text: 'Title',
+                  text: AppLocalizations.of(context)!.title,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   textAlign: TextAlign.left,
                 ),
               ),
               MyTextFeild(
-                hintText: "Undercarriage",
+                hintText: AppLocalizations.of(context)!.undercarriage,
+                // hintText: "Undercarriage",
                 obsuretext: false,
                 controller: _titleController,
                 showIcon: false,
@@ -75,18 +93,20 @@ class _articleRegistrationState extends State<articleRegistration> {
               const SizedBox(
                 height: 10,
               ),
-              const Row(
+              Row(
                 children: <Widget>[
                   MyTexxtStyle(
-                    text: "Condition",
+                    text: AppLocalizations.of(context)!.condition,
+                    // text: "Condition",
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 80,
                   ),
                   MyTexxtStyle(
-                    text: "City and Country",
+                    // text: "City and Country",
+                    text: AppLocalizations.of(context)!.cityAndCountry,
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
@@ -98,20 +118,22 @@ class _articleRegistrationState extends State<articleRegistration> {
               Row(
                 children: <Widget>[
                   Radio<String>(
-                    value: 'New',
+                    // value: 'New',
+                    value: AppLocalizations.of(context)!.newtag,
                     groupValue: _radioValue,
                     onChanged: _handleRadioValueChange,
                   ),
-                  const Text('New'),
+                  Text(AppLocalizations.of(context)!.newtag),
                   Radio<String>(
-                    value: 'Used',
+                    // value: 'Used',
+                    value: AppLocalizations.of(context)!.used,
                     groupValue: _radioValue,
                     onChanged: _handleRadioValueChange,
                   ),
-                  const Text('Used'),
+                  Text(AppLocalizations.of(context)!.used),
                   Expanded(
                     child: MyTextFeild(
-                      hintText: "City and Country",
+                      hintText: AppLocalizations.of(context)!.cityAndCountry,
                       obsuretext: false,
                       controller: _cityAndCountryController,
                       showIcon: false,
@@ -125,18 +147,20 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               //category and Model text
-              const Row(
+              Row(
                 children: <Widget>[
                   MyTexxtStyle(
-                    text: "Category",
+                    // text: "Category",
+                    text: AppLocalizations.of(context)!.category,
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 80,
                   ),
                   MyTexxtStyle(
-                    text: "Marca",
+                    // text: "Marca",
+                    text: AppLocalizations.of(context)!.model,
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
@@ -149,10 +173,8 @@ class _articleRegistrationState extends State<articleRegistration> {
                 children: <Widget>[
                   Expanded(
                     child: DropdownButton<String>(
-                      isExpanded:
-                          true, // add this line to move the arrow to the right
-                      hint: const Text(
-                          'Select Category'), // add this line to show hint text
+                      isExpanded: true,
+                      hint: Text(AppLocalizations.of(context)!.selectCategory),
                       value: dropdownValue1,
                       icon: const Icon(Icons.arrow_downward),
                       iconSize: 24,
@@ -167,8 +189,12 @@ class _articleRegistrationState extends State<articleRegistration> {
                           dropdownValue1 = newValue;
                         });
                       },
-                      items: <String>['One', 'Two', 'Three', 'Four']
-                          .map<DropdownMenuItem<String>>((String value) {
+                      items: <String>[
+                        AppLocalizations.of(context)!.one,
+                        AppLocalizations.of(context)!.two,
+                        AppLocalizations.of(context)!.three,
+                        AppLocalizations.of(context)!.four
+                      ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
@@ -176,15 +202,13 @@ class _articleRegistrationState extends State<articleRegistration> {
                       }).toList(),
                     ),
                   ),
-                  const SizedBox(
-                      width: 10), // add some space between the dropdowns
+                  const SizedBox(width: 10),
                   Expanded(
                     child: DropdownButton<String>(
-                      isExpanded:
-                          true, // add this line to move the arrow to the right
-                      hint: const Text(
-                        'Select Marca',
-                      ), // add this line to show hint text
+                      isExpanded: true,
+                      hint: Text(
+                        AppLocalizations.of(context)!.selectMarca,
+                      ),
                       value: dropdownValue2,
                       icon: const Icon(Icons.arrow_downward),
                       iconSize: 24,
@@ -199,8 +223,12 @@ class _articleRegistrationState extends State<articleRegistration> {
                           dropdownValue2 = newValue;
                         });
                       },
-                      items: <String>['One', 'Two', 'Three', 'Four']
-                          .map<DropdownMenuItem<String>>((String value) {
+                      items: <String>[
+                        AppLocalizations.of(context)!.one,
+                        AppLocalizations.of(context)!.two,
+                        AppLocalizations.of(context)!.three,
+                        AppLocalizations.of(context)!.four
+                      ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
@@ -215,10 +243,11 @@ class _articleRegistrationState extends State<articleRegistration> {
               ),
 
               //Model text
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: 'Model',
+                  // text: 'Model',
+                  text: AppLocalizations.of(context)!.model,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   textAlign: TextAlign.left,
@@ -226,7 +255,7 @@ class _articleRegistrationState extends State<articleRegistration> {
               ),
               //Model text field
               MyTextFeild(
-                hintText: "Model",
+                hintText: AppLocalizations.of(context)!.model,
                 obsuretext: false,
                 controller: _modelController,
                 showIcon: false,
@@ -237,18 +266,20 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               //serial Number & Year
-              const Row(
+              Row(
                 children: <Widget>[
                   MyTexxtStyle(
-                    text: "Serial Number",
+                    // text: "Serial Number",
+                    text: AppLocalizations.of(context)!.serialNumber,
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 80,
                   ),
                   MyTexxtStyle(
-                    text: "Year",
+                    // text: "Year",
+                    text: AppLocalizations.of(context)!.year,
                     fontWeight: FontWeight.w600,
                     fontSize: 16,
                   ),
@@ -259,7 +290,7 @@ class _articleRegistrationState extends State<articleRegistration> {
                 children: <Widget>[
                   Expanded(
                     child: MyTextFeild(
-                      hintText: "Serial Number",
+                      hintText: AppLocalizations.of(context)!.serialNumber,
                       obsuretext: false,
                       controller: _serialNumberController,
                       showIcon: false,
@@ -269,7 +300,8 @@ class _articleRegistrationState extends State<articleRegistration> {
                   ),
                   Expanded(
                     child: MyTextFeild(
-                      hintText: "Year ",
+                      // hintText: "Year ",
+                      hintText: AppLocalizations.of(context)!.year,
                       obsuretext: false,
                       controller: _yearController,
                       showIcon: false,
@@ -283,17 +315,18 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               //text for condition
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: 'Condition',
+                  text: AppLocalizations.of(context)!.condition,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   textAlign: TextAlign.left,
                 ),
               ),
               MyTextFeild(
-                hintText: "Condition",
+                hintText: AppLocalizations.of(context)!.condition,
+                // hintText: "Condition",
                 obsuretext: false,
                 controller: _modelController,
                 showIcon: false,
@@ -304,17 +337,18 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               // test and test feild for Precio
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: 'Percio',
+                  // text: 'Percio',
+                  text: AppLocalizations.of(context)!.precio,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   textAlign: TextAlign.left,
                 ),
               ),
               MyTextFeild(
-                hintText: "Percio ",
+                hintText: AppLocalizations.of(context)!.precio,
                 obsuretext: false,
                 controller: _modelController,
                 showIcon: false,
@@ -324,10 +358,10 @@ class _articleRegistrationState extends State<articleRegistration> {
               const SizedBox(
                 height: 10,
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: 'Notes',
+                  text: AppLocalizations.of(context)!.notes,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                   textAlign: TextAlign.left,
@@ -337,7 +371,8 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               MyTextFeild(
-                hintText: "Notes ",
+                // hintText: "Notes ",
+                hintText: AppLocalizations.of(context)!.notes,
                 obsuretext: false,
                 controller: _modelController,
                 showIcon: false,
@@ -348,23 +383,36 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               InkWell(
-                onTap: () {
-                  //Logic for Uploading the file
-                },
-                child: const Row(
+                onTap: getImage,
+                child: Row(
                   children: <Widget>[
-                    Icon(
+                    const Icon(
                       Icons.camera_alt_rounded,
                       color: Colors.black,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     MyTexxtStyle(
-                      text: "Upload Images/Video",
+                      // text: "Upload Images/Video",
+                      text: AppLocalizations.of(context)!.uploadImagesVideo,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 200,
+                child: _image == null
+                    ? const MyTexxtStyle(
+                        text: 'Update an Image fore Preview.',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        textAlign: TextAlign.center,
+                      )
+                    : Image.file(_image!),
               ),
               const SizedBox(
                 height: 10,
@@ -376,7 +424,8 @@ class _articleRegistrationState extends State<articleRegistration> {
                     screenSize.width * 0.05,
                   ), // Adjust the padding as needed
                   child: MyButton(
-                    text: "Article Registration",
+                    // text: "Article Registration",
+                    text: AppLocalizations.of(context)!.articleRegistration,
                     textColor: Theme.of(context).colorScheme.tertiary,
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     onTap: () => {

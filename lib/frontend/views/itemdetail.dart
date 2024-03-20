@@ -5,6 +5,7 @@ import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class ItemDetail extends StatefulWidget {
   const ItemDetail({super.key});
@@ -14,9 +15,10 @@ class ItemDetail extends StatefulWidget {
 }
 
 class _ItemDetailState extends State<ItemDetail> {
+  final String imageUrl = "assets/images/image07.png";
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size; // get the screen size
+    var screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -38,28 +40,39 @@ class _ItemDetailState extends State<ItemDetail> {
             const SizedBox(
               height: 20,
             ),
+
             Padding(
-              padding: EdgeInsets.all(20.0 *
-                  screenSize.width /
-                  1080), // adjust the padding based on the screen size
-              //Image Box or Image Detail
-              child: Image.network(
-                'https://s3-alpha-sig.figma.com/img/49c9/476d/426313e568f766678d12b2cfd6212fcd?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HtnjNzfAREaeeYE58f~kCdtO6rfzdHJp5pgfazV7ZhzlrSoq7zDIWWPeSjNNKi1Rutti1I7hIetOzCe0JYhMVM8cJYZI1cps8jY2EXUenW30u5v976gWD65hAhgAcsKroAD-5mJSPLCOqwNRG6yHOXfZ5DKJ7nsonFESbXWtSL8ntLwW0sG6bJjJ5S1a6I8mpODv1yEYrD8cM~KlY1M1cKjBfmUcvNYfMCk2J7oFfhC66830cOkLvc7NmOdwLPh~K3ChevPBoqpv6ymfMKqqbuSMFrRwh-5kXYs5Rmj1IHNCHV93ufh4Xk9XAy6aIeIkcgqKyRLKfxiKLiWpA7j7nw__',
-                fit: BoxFit
-                    .cover, // this is to make sure the image covers the entire space
-                errorBuilder: (context, error, stackTrace) {
-                  // handle image loading errors
-                  return const Center(child: Text('Error loading image'));
-                },
-              ),
+              padding: EdgeInsets.all(20.0 * screenSize.width / 1080),
+              child: imageUrl.startsWith('http')
+                  ? Image.network(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Center(
+                          child: Text(AppLocalizations.of(context)!
+                              .errorLoadingAssetImage),
+                        );
+                      },
+                    )
+                  : Image.asset(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Center(
+                          child: Text(AppLocalizations.of(context)!
+                              .errorLoadingAssetImage),
+                        );
+                      },
+                    ),
             ),
             //People View Count
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: "People View Count/ within last hour 21",
+                  // text: "People View Count/ within last hour 21",
+                  text: AppLocalizations.of(context)!.peopleViewCount,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey,
@@ -67,15 +80,16 @@ class _ItemDetailState extends State<ItemDetail> {
               ),
             ),
             //Title of the Image
-            const Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: Row(
                 children: [
                   Expanded(
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: MyTexxtStyle(
-                        text: 'Undercarriage',
+                        // text: 'Undercarriage',
+                        text: AppLocalizations.of(context)!.undercarriage,
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         textAlign: TextAlign.left,
@@ -83,14 +97,15 @@ class _ItemDetailState extends State<ItemDetail> {
                     ),
                   ),
                   MyTexxtStyle(
-                    text: '4.5/5', // replace with your dynamic rating
+                    // text: '4.5/5', // replace with your dynamic rating
+                    text: AppLocalizations.of(context)!.rating, // Use this
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.star,
                     size: 30,
                     color: Colors.amber,
@@ -110,7 +125,7 @@ class _ItemDetailState extends State<ItemDetail> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: MyTexxtStyle(
-                  text: "Rs: 1800000",
+                  text: "US: 1800000",
                   color: Colors.grey,
                   fontWeight: FontWeight.w500,
                 ),
@@ -120,8 +135,9 @@ class _ItemDetailState extends State<ItemDetail> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: MyTexxtStyle(
-                text:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam nam eu nulla a. Vestibulum aliquet facilisi interdum nibh blandit Read more...",
+                text: AppLocalizations.of(context)!.loremIpsum,
+                // text:
+                //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas diam nam eu nulla a. Vestibulum aliquet facilisi interdum nibh blandit Read more...",
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 color: Colors.grey.shade700,
@@ -162,8 +178,9 @@ class _ItemDetailState extends State<ItemDetail> {
                       width: 30, // adjust as needed
                     ),
                     const SizedBox(width: 8), // adjust for spacing as needed
-                    const MyTexxtStyle(
-                      text: 'Contact Dealer',
+                    MyTexxtStyle(
+                      // text: 'Contact Dealer',
+                      text: AppLocalizations.of(context)!.contactDealer,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
@@ -177,8 +194,9 @@ class _ItemDetailState extends State<ItemDetail> {
                       width: 30, // adjust as needed
                     ),
                     const SizedBox(width: 8), // adjust for spacing as needed
-                    const MyTexxtStyle(
-                      text: 'Car Detail',
+                    MyTexxtStyle(
+                      text: AppLocalizations.of(context)!.carDetail,
+                      // text: 'Car Detail',
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
@@ -213,8 +231,9 @@ class _ItemDetailState extends State<ItemDetail> {
                       width: 30, // adjust as needed
                     ),
                     const SizedBox(width: 8), // adjust for spacing as needed
-                    const MyTexxtStyle(
-                      text: 'EMI/Loan',
+                    MyTexxtStyle(
+                      // text: 'EMI/Loan',
+                      text: AppLocalizations.of(context)!.emiLoan,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
@@ -229,7 +248,8 @@ class _ItemDetailState extends State<ItemDetail> {
               child: SizedBox(
                 width: double.infinity,
                 child: MyButton(
-                  text: 'Buy Now',
+                  // text: 'Buy Now',
+                  text: AppLocalizations.of(context)!.buyNow,
                   textColor: Theme.of(context).colorScheme.background,
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   onTap: () {

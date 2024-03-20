@@ -3,9 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/screens/HomeScreen.dart';
-import 'package:quotaserver/frontend/widgets/appbar.dart';
+
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class verfication extends StatefulWidget {
   verfication({super.key});
@@ -23,7 +24,9 @@ class _verficationState extends State<verfication> {
     // Calculate padding and margin based on screen size
     var padding = screenSize.width * 0.01; // 1% of screen width
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(padding),
@@ -45,7 +48,8 @@ class _verficationState extends State<verfication> {
               ),
               Center(
                 child: Text(
-                  "Enter Verification Code",
+                  AppLocalizations.of(context)!.enterVerificationCode,
+                  // "Enter Verification Code",
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -58,7 +62,8 @@ class _verficationState extends State<verfication> {
               ),
 
               MyTextFeild(
-                hintText: 'Verfication Code',
+                // hintText: 'Verfication Code',
+                hintText: AppLocalizations.of(context)!.verficationCode,
                 obsuretext: false,
                 onlyNumber: true,
                 controller: widget._verifyCodeController,
@@ -81,7 +86,8 @@ class _verficationState extends State<verfication> {
                     InkWell(
                       onTap: () {},
                       child: Text(
-                        "Did not receive yet? ",
+                        // "Did not receive yet? ",
+                        AppLocalizations.of(context)!.didNotReceiveYet,
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: Theme.of(context).colorScheme.primary,
@@ -94,7 +100,8 @@ class _verficationState extends State<verfication> {
                         // Add your resend logic here
                       },
                       child: Text(
-                        "Resend",
+                        // "Resend",
+                        AppLocalizations.of(context)!.resend,
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: Theme.of(context).colorScheme.secondary,
@@ -114,7 +121,8 @@ class _verficationState extends State<verfication> {
                     screenSize.width * 0.05,
                   ), // Adjust the padding as needed
                   child: MyButton(
-                    text: "Verify",
+                    // text: "Verify",
+                    text: AppLocalizations.of(context)!.verify,
                     textColor: Theme.of(context).colorScheme.tertiary,
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     onTap: () => {

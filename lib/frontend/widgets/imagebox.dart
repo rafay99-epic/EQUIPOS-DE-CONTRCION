@@ -35,12 +35,34 @@ class ImageBox extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            // Expanded(
+            //   child: imageUrl != null
+            //       ? Image.asset(
+            //           imageUrl!,
+            //           fit: BoxFit.cover,
+            //           errorBuilder: (context, error, stackTrace) {
+            //             return Text('Error loading image');
+            //           },
+            //         )
+            //       : Container(),
+            // ),
             Expanded(
               child: imageUrl != null
-                  ? Image.network(
-                      imageUrl!,
-                      fit: BoxFit.cover,
-                    )
+                  ? imageUrl!.startsWith('http')
+                      ? Image.network(
+                          imageUrl!,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Text('Error loading image');
+                          },
+                        )
+                      : Image.asset(
+                          imageUrl!,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Text('Error loading image');
+                          },
+                        )
                   : Container(),
             ),
             Text(

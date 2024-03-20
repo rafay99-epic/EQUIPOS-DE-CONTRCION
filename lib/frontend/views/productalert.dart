@@ -1,7 +1,10 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class productalert extends StatefulWidget {
   const productalert({super.key});
@@ -22,7 +25,8 @@ class _productalertState extends State<productalert> {
         child: Column(
           children: <Widget>[
             MyTexxtStyle(
-              text: "Product Alert",
+              // text: "Product Alert",
+              text: AppLocalizations.of(context)!.productAlert,
               textAlign: TextAlign.center,
               fontSize: 22,
               fontWeight: FontWeight.w500,
@@ -31,18 +35,21 @@ class _productalertState extends State<productalert> {
             const SizedBox(
               height: 50,
             ),
-            const MyTexxtStyle(
+            MyTexxtStyle(
               textAlign: TextAlign.center,
-              text: "The “Excavators” you were looking for are here",
+              // text: "The “Excavators” you were looking for are here",
+              text: AppLocalizations.of(context)!
+                  .theExcavatorsYouWereLookingForAreHere,
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
             const SizedBox(
               height: 30,
             ),
-            const MyTexxtStyle(
+            MyTexxtStyle(
               textAlign: TextAlign.center,
-              text: "(5) New Listings",
+              // text: "(5) New Listings",
+              text: AppLocalizations.of(context)!.newListings,
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
@@ -60,7 +67,8 @@ class _productalertState extends State<productalert> {
                   screenSize.width * 0.05,
                 ),
                 child: MyButton(
-                  text: "View Listing",
+                  text: AppLocalizations.of(context)!.viewListing,
+                  // text: "View Listing",
                   textColor: Theme.of(context).colorScheme.secondary,
                   backgroundColor: Theme.of(context).colorScheme.primary,
                   onTap: () => {

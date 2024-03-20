@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/constant/animation/animationFadeLeftToRight.dart';
 import 'package:quotaserver/frontend/screens/LoginScreen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 // ignore: camel_case_types
 class splash extends StatefulWidget {
@@ -47,7 +48,8 @@ class _splashState extends State<splash> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "E.D.C",
+                  // "E.D.C",
+                  AppLocalizations.of(context)!.edc,
                   style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: screenWidth * 0.2, // 20% of screen width
@@ -58,7 +60,8 @@ class _splashState extends State<splash> {
               FittedBox(
                 alignment: Alignment.center,
                 child: Text(
-                  "EQUIPOSE DE CONTRACION",
+                  // "EQUIPOSE DE CONTRACION",
+                  AppLocalizations.of(context)!.equiposDeContracion,
                   style: GoogleFonts.poppins(
                     color: Colors.white,
                     fontSize: screenWidth * 0.1, // 10% of screen width
@@ -78,14 +81,16 @@ class _splashState extends State<splash> {
 
               const Spacer(),
               Text(
-                "Brought to you by Quotaserv",
+                // "Brought to you by Quotaserv",
+                AppLocalizations.of(context)!.broughtToYouByQuotaserv,
                 style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.035, // 3.5% of screen width
                 ),
               ),
               Text(
-                "quotaserv.com",
+                // "quotaserv.com",
+                AppLocalizations.of(context)!.quotaservCom,
                 style: GoogleFonts.poppins(
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: screenWidth * 0.03, // 3% of screen width

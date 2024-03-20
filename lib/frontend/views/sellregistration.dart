@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class SellRegistration extends StatefulWidget {
   const SellRegistration({super.key});
@@ -59,7 +60,8 @@ class _SellRegistrationState extends State<SellRegistration> {
               ),
               Center(
                 child: Text(
-                  "Seller Registration",
+                  AppLocalizations.of(context)!.sellerRegistration,
+                  // "Seller Registration",
                   style: GoogleFonts.poppins(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -71,7 +73,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 15,
               ),
               MyTextFeild(
-                hintText: 'Full Name',
+                // hintText: 'Full Name',
+                hintText: AppLocalizations.of(context)!.fullName,
                 obsuretext: false,
                 controller: _nameController,
                 icons: Icons.account_circle,
@@ -81,7 +84,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 15,
               ),
               MyTextFeild(
-                hintText: 'Parents',
+                // hintText: 'Parents',
+                hintText: AppLocalizations.of(context)!.parents,
                 obsuretext: false,
                 controller: _parentController,
                 icons: Icons.account_circle,
@@ -91,7 +95,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Email',
+                // hintText: 'Email',
+                hintText: AppLocalizations.of(context)!.email,
                 obsuretext: false,
                 controller: _emailController,
                 icons: Icons.email_rounded,
@@ -101,7 +106,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Reperat Email',
+                // hintText: 'Reperat Email',
+                hintText: AppLocalizations.of(context)!.reperatEmail,
                 obsuretext: false,
                 controller: _reEnterEmailCotroller,
                 icons: Icons.email_rounded,
@@ -111,7 +117,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Phone Number',
+                // hintText: 'Phone Number',
+                hintText: AppLocalizations.of(context)!.phoneNumber,
                 obsuretext: false,
                 controller: _phoneNumberController,
                 icons: Icons.phone,
@@ -140,8 +147,9 @@ class _SellRegistrationState extends State<SellRegistration> {
                         setSelectedRadio(val);
                       },
                     ),
-                    const MyTexxtStyle(
-                      text: 'WhatsApp',
+                    MyTexxtStyle(
+                      // text: 'WhatsApp',
+                      text: AppLocalizations.of(context)!.whatsApp,
                       color: Colors.grey,
                     ),
                     const SizedBox(
@@ -157,8 +165,9 @@ class _SellRegistrationState extends State<SellRegistration> {
                         setSelectedRadio(val);
                       },
                     ),
-                    const MyTexxtStyle(
-                      text: 'Office',
+                    MyTexxtStyle(
+                      // text: 'Office',
+                      text: AppLocalizations.of(context)!.office,
                       color: Colors.grey,
                     ),
                     const SizedBox(
@@ -174,8 +183,9 @@ class _SellRegistrationState extends State<SellRegistration> {
                         setSelectedRadio(val);
                       },
                     ),
-                    const MyTexxtStyle(
-                      text: 'Other',
+                    MyTexxtStyle(
+                      // text: 'Other',
+                      text: AppLocalizations.of(context)!.other,
                       color: Colors.grey,
                     ),
                   ],
@@ -187,7 +197,8 @@ class _SellRegistrationState extends State<SellRegistration> {
               ),
 
               MyTextFeild(
-                hintText: ' Another Phone Number',
+                // hintText: ' Another Phone Number',
+                hintText: AppLocalizations.of(context)!.anotherPhoneNumber,
                 obsuretext: false,
                 controller: _reEnterPhoneNumberController,
                 icons: Icons.phone,
@@ -200,7 +211,8 @@ class _SellRegistrationState extends State<SellRegistration> {
               ),
 
               MyTextFeild(
-                hintText: 'Password',
+                // hintText: 'Password',
+                hintText: AppLocalizations.of(context)!.password,
                 obsuretext: true,
                 controller: _passwordController,
                 icons: Icons.password,
@@ -210,7 +222,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                 height: 20,
               ),
               MyTextFeild(
-                hintText: 'Repeat Password',
+                // hintText: 'Repeat Password',
+                hintText: AppLocalizations.of(context)!.repeatPassword,
                 obsuretext: true,
                 controller: _reEnterpasswordController,
                 icons: Icons.password,
@@ -224,7 +237,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                     screenSize.width * 0.05,
                   ),
                   child: MyButton(
-                    text: "Sign Up",
+                    text: AppLocalizations.of(context)!.signUp,
+                    // text: "Sign Up",
                     textColor: Theme.of(context).colorScheme.tertiary,
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     onTap: () => {
@@ -249,7 +263,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                               return AlertDialog(
                                 title: Center(
                                   child: Text(
-                                    'Error',
+                                    // 'Error',
+                                    AppLocalizations.of(context)!.error,
                                     style: GoogleFonts.poppins(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -259,7 +274,9 @@ class _SellRegistrationState extends State<SellRegistration> {
                                   ),
                                 ),
                                 content: Text(
-                                  'The entered information does not match or some fields are empty.',
+                                  AppLocalizations.of(context)!
+                                      .theEnteredInformationDoesNotMatchOrSomeFieldsAreEmpty,
+                                  // 'The entered information does not match or some fields are empty.',
                                   style: GoogleFonts.poppins(
                                     fontSize: 16,
                                     color:
@@ -274,7 +291,8 @@ class _SellRegistrationState extends State<SellRegistration> {
                                         backgroundColor: Colors.amber,
                                       ),
                                       child: Text(
-                                        'OK',
+                                        // 'OK',
+                                        AppLocalizations.of(context)!.ok,
                                         style: GoogleFonts.poppins(
                                           fontSize: 16,
                                           color: Colors.white,

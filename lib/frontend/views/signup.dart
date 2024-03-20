@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/screens/LoginScreen.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -46,7 +47,8 @@ class _SignUpState extends State<SignUp> {
             ),
             Center(
               child: Text(
-                "Sign Up",
+                // "Sign Up",
+                AppLocalizations.of(context)!.signUp,
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -59,7 +61,8 @@ class _SignUpState extends State<SignUp> {
             ),
             Center(
               child: Text(
-                "Find your dream car!",
+                // "Find your dream car!",
+                AppLocalizations.of(context)!.findYourDreamCar,
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.primary,
@@ -70,7 +73,8 @@ class _SignUpState extends State<SignUp> {
               height: 20,
             ),
             MyTextFeild(
-              hintText: 'Full name',
+              // hintText: 'Full name',
+              hintText: AppLocalizations.of(context)!.fullName,
               obsuretext: false,
               controller: _nameController,
               icons: Icons.account_circle,
@@ -79,7 +83,8 @@ class _SignUpState extends State<SignUp> {
               height: 20,
             ),
             MyTextFeild(
-              hintText: 'Email',
+              // hintText: 'Email',
+              hintText: AppLocalizations.of(context)!.email,
               obsuretext: false,
               controller: _emailController,
               icons: Icons.email_rounded,
@@ -88,7 +93,8 @@ class _SignUpState extends State<SignUp> {
               height: 10,
             ),
             MyTextFeild(
-              hintText: 'Phone Number',
+              // hintText: 'Phone Number',
+              hintText: AppLocalizations.of(context)!.phoneNumber,
               obsuretext: false,
               controller: _phoneNumberController,
               icons: Icons.phone,
@@ -98,7 +104,8 @@ class _SignUpState extends State<SignUp> {
               height: 10,
             ),
             MyTextFeild(
-              hintText: 'Password',
+              // hintText: 'Password',
+              hintText: AppLocalizations.of(context)!.password,
               obsuretext: true,
               controller: _passwordController,
               icons: Icons.password_rounded,
@@ -116,7 +123,8 @@ class _SignUpState extends State<SignUp> {
                   screenSize.width * 0.05,
                 ), // Adjust the padding as needed
                 child: MyButton(
-                  text: "Sign Up",
+                  // text: "Sign Up",
+                  text: AppLocalizations.of(context)!.signUp,
                   textColor: Theme.of(context).colorScheme.tertiary,
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   onTap: () => {},
@@ -133,7 +141,8 @@ class _SignUpState extends State<SignUp> {
             ),
             InkWell(
               child: Text(
-                "Sing Up with",
+                // "Sing Up with",
+                AppLocalizations.of(context)!.singUpWith,
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   color: Theme.of(context).colorScheme.secondary,
@@ -153,7 +162,8 @@ class _SignUpState extends State<SignUp> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    "Already have an account? ",
+                    AppLocalizations.of(context)!.alreadyHaveAnAccount,
+                    // "Already have an account? ",
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Theme.of(context).colorScheme.primary,
@@ -193,7 +203,8 @@ class _SignUpState extends State<SignUp> {
                       );
                     },
                     child: Text(
-                      "Sign In",
+                      // "Sign In",
+                      AppLocalizations.of(context)!.signIn,
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         color: Theme.of(context).colorScheme.secondary,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
 
 class ProductAlertDialog extends StatefulWidget {
   const ProductAlertDialog({Key? key}) : super(key: key);
@@ -13,17 +14,17 @@ class _ProductAlertDialogState extends State<ProductAlertDialog> {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius:
-            BorderRadius.circular(20.0), // adjust this value as needed
+        borderRadius: BorderRadius.circular(20.0),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisSize: MainAxisSize.min, // To make the card compact
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const Text(
-              'Product Alert',
-              style: TextStyle(
+            Text(
+              // 'Product Alert',
+              AppLocalizations.of(context)!.productAlert,
+              style: const TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.w700,
               ),
@@ -41,7 +42,8 @@ class _ProductAlertDialogState extends State<ProductAlertDialog> {
               child: SizedBox(
                   width: double.infinity,
                   child: MyButton(
-                    text: "View Listing",
+                    // text: "View Listing",
+                    text: AppLocalizations.of(context)!.viewListing,
                     textColor: Theme.of(context).colorScheme.secondary,
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     onTap: () {},

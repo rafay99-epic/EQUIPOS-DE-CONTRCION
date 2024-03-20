@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
+
 class Chat extends StatefulWidget {
   const Chat({super.key});
 
@@ -20,36 +22,38 @@ class _ChatState extends State<Chat> {
   Widget build(BuildContext context) {
     final List<Message> messages = [
       Message(
-        text: 'Hello, how are you?',
+        text: AppLocalizations.of(context)!.helloHowAreYou, // Use this
         timestamp: DateTime.now(),
         senderId: '1',
         receiverId: '2',
       ),
       Message(
-        text: 'I am fine, thank you. How about you?',
+        text: AppLocalizations.of(context)!
+            .iAmFineThankYouHowAboutYou, // Use this
         timestamp: DateTime.now().add(const Duration(minutes: 1)),
         senderId: '2',
         receiverId: '1',
       ),
       Message(
-        text: 'I am doing well, thank you.',
+        text: AppLocalizations.of(context)!.iAmDoingWellThankYou, // Use this
         timestamp: DateTime.now().add(const Duration(minutes: 2)),
         senderId: '1',
         receiverId: '2',
       ),
       Message(
-        text: 'Good to Know, I need your help with something.',
+        text: AppLocalizations.of(context)!
+            .goodToKnowINeedYourHelpWithSomething, // Use this
         timestamp: DateTime.now().add(const Duration(minutes: 2)),
         senderId: '2',
         receiverId: '1',
       ),
       Message(
-        text: "Sure, I can help you with something. What's up?",
+        text: AppLocalizations.of(context)!
+            .sureICanHelpYouWithSomethingWhatsUp, // Use this
         timestamp: DateTime.now().add(const Duration(minutes: 2)),
         senderId: '1',
         receiverId: '2',
-      ),
-      // Add more messages as needed
+      ), // Add more messages as needed
     ];
     final paddingSize = MediaQuery.of(context).size.width * 0.05;
     return Scaffold(
@@ -215,11 +219,12 @@ class _ChatState extends State<Chat> {
                         // Implement your function here
                       },
                       style: const TextStyle(color: Colors.white),
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         filled: true,
-                        fillColor: Color.fromRGBO(15, 34, 34, 1),
-                        hintText: 'Send a message...',
-                        hintStyle: TextStyle(color: Colors.white),
+                        fillColor: const Color.fromRGBO(15, 34, 34, 1),
+                        // hintText: 'Send a message...',
+                        hintText: AppLocalizations.of(context)!.sendAMessage,
+                        hintStyle: const TextStyle(color: Colors.white),
                       ),
                     ),
                   ),

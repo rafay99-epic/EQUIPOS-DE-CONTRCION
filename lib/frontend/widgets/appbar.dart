@@ -5,7 +5,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
-  final String? headTitle; //head title
+  final String? headTitle;
   final IconData? actionIcon;
   final VoidCallback? onActionIconPressed;
   final bool showActionIcon;
@@ -55,7 +55,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 headTitle ?? '',
                 textAlign: textAlign,
                 style: GoogleFonts.poppins(
-                  fontSize: 24,
+                  fontSize: 18,
                   color: titleColor,
                   fontWeight: FontWeight.w600,
                 ),
