@@ -1,11 +1,13 @@
 // ignore_for_file: unnecessary_new, camel_case_types, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'dart:io';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:quotaserver/frontend/widgets/textstyle.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:image_picker/image_picker.dart';
 
 class articleRegistration extends StatefulWidget {
   const articleRegistration({super.key});
@@ -18,6 +20,19 @@ class _articleRegistrationState extends State<articleRegistration> {
   String? _radioValue; // stores current selected value
   String? dropdownValue1;
   String? dropdownValue2;
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (image != null) {
+        _image = File(image.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   void _handleRadioValueChange(String? value) {
     setState(() {
@@ -368,9 +383,7 @@ class _articleRegistrationState extends State<articleRegistration> {
                 height: 10,
               ),
               InkWell(
-                onTap: () {
-                  //Logic for Uploading the file
-                },
+                onTap: getImage,
                 child: Row(
                   children: <Widget>[
                     const Icon(
@@ -386,6 +399,20 @@ class _articleRegistrationState extends State<articleRegistration> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 200,
+                child: _image == null
+                    ? const MyTexxtStyle(
+                        text: 'Update an Image fore Preview.',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        textAlign: TextAlign.center,
+                      )
+                    : Image.file(_image!),
               ),
               const SizedBox(
                 height: 10,

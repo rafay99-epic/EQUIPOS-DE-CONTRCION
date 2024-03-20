@@ -433,6 +433,7 @@ class _LoginState extends State<Login> {
                   padding: EdgeInsets.all(screenSize.width * 0.05),
                   child: MyButton(
                     text: AppLocalizations.of(context)!.login,
+                    // text: "Login error",
                     textColor: Theme.of(context).colorScheme.tertiary,
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     onTap: () => {

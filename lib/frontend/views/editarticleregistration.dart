@@ -396,7 +396,10 @@
 //   }
 // }
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:quotaserver/frontend/widgets/appbar.dart';
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
@@ -419,6 +422,20 @@ class _ediArticletRegistrationState extends State<editArticleRegistration> {
   void _handleRadioValueChange(String? value) {
     setState(() {
       _radioValue = value;
+    });
+  }
+
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (image != null) {
+        _image = File(image.path);
+      } else {
+        print('No image selected.');
+      }
     });
   }
 
@@ -761,9 +778,7 @@ class _ediArticletRegistrationState extends State<editArticleRegistration> {
                 height: 10,
               ),
               InkWell(
-                onTap: () {
-                  //Logic for Uploading the file
-                },
+                onTap: getImage,
                 child: Row(
                   children: <Widget>[
                     const Icon(
@@ -772,13 +787,27 @@ class _ediArticletRegistrationState extends State<editArticleRegistration> {
                     ),
                     const SizedBox(width: 10),
                     MyTexxtStyle(
-                      text: AppLocalizations.of(context)!
-                          .uploadImagesVideo, // Use this
+                      // text: "Upload Images/Video",
+                      text: AppLocalizations.of(context)!.uploadImagesVideo,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 200,
+                child: _image == null
+                    ? const MyTexxtStyle(
+                        text: 'Update an Image fore Preview.',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        textAlign: TextAlign.center,
+                      )
+                    : Image.file(_image!),
               ),
               const SizedBox(
                 height: 10,

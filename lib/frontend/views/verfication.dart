@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quotaserver/frontend/screens/HomeScreen.dart';
-import 'package:quotaserver/frontend/widgets/appbar.dart';
+
 import 'package:quotaserver/frontend/widgets/myButton.dart';
 import 'package:quotaserver/frontend/widgets/textfeild.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import this
@@ -24,7 +24,9 @@ class _verficationState extends State<verfication> {
     // Calculate padding and margin based on screen size
     var padding = screenSize.width * 0.01; // 1% of screen width
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(padding),
