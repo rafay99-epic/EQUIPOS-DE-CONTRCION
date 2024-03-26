@@ -20,6 +20,8 @@ import 'package:quotaserver/frontend/screens/ProfileScreen.dart';
 import 'package:quotaserver/frontend/screens/ReviewScreen.dart';
 import 'package:quotaserver/frontend/screens/SellRegistrationScreen.dart';
 import 'package:quotaserver/frontend/screens/itemDetailEditScreen.dart';
+import 'package:quotaserver/frontend/views/privacy_policy.dart';
+import 'package:quotaserver/frontend/views/terms_condition.dart';
 import 'package:quotaserver/frontend/widgets/productalertdialog.dart';
 import 'package:quotaserver/frontend/widgets/updatedialog.dart';
 
@@ -83,6 +85,8 @@ class _MyDrawerState extends State<MyDrawer> {
               const EditArticleRegistrationScreen()),
           buildListTile(
               "Article Registration", const ArticleRegistrationScreen()),
+          buildListTile("Privacy Policy", const PrivacyPolicy()),
+          buildListTile("Terms and Conditions", const TermsConditions()),
           ListTile(
             title: const Text('Switch Language'),
             trailing: Switch(
